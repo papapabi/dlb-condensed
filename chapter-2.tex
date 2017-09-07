@@ -1,5 +1,7 @@
 \documentclass[11pt,twocolumn]{report}
 \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm} % boldface math symbols
 \def\realnumbers{\mathbb{R}}
 \def\naturalnumbers{\mathbb{N}}
 
@@ -9,21 +11,82 @@
 
 \textbf{Linear Algebra}
 \begin{itemize}
-	\item a branch of mathematics that is widely used throughout science and
-		engineering
-	\item a form of continuous, not discrete math
-	\item read \textit{The Matrix Cookbook} (Petersen and Pedersen, 2006) or
-		\textit{Linear Algebra} (Shilov, 1977) for a more thorough discussion
+  \item a branch of mathematics that is widely used throughout science and
+    engineering
+  \item a form of continuous, not discrete math
+  \item read \textit{The Matrix Cookbook} (Petersen and Pedersen, 2006) or
+    \textit{Linear Algebra} (Shilov, 1977) for a more thorough discussion
 \end{itemize}
 
 \section{Scalars, Vectors, Matrices, and Tensors}
+
 \large\textbf{Scalars:}
 \begin{itemize}
-	\item a single number that is (by the book's notation) written in lowercase
-		alpha italics
-	\item "Let $ s \in \realnumbers $ be the slope of the line" while defining a
-		real-valued scalar
-	\item "Let $ n \in \naturalnumbers $ be the number of units" while defining a natural
-		number scalar
+  \item a single number that is (by the book's notation) written in lowercase
+    alpha italics
+  \item "Let $ s \in \realnumbers $ be the slope of the line" while defining a
+    real-valued scalar
+  \item "Let $ n \in \naturalnumbers $ be the number of units" while defining a
+    natural number scalar
 \end{itemize}
+
+\large\textbf{Vectors:}
+\begin{itemize}
+  \item an array of numbers arranged in a particular order
+  \item think of vectors as things that describe the position points in space,
+    with each element giving the coordinate along a particular axis
+  \item one-indexed, not zero-indexed (according, again, to the book's notation)
+  \item denoted as $\bm{x}$, lowercase boldface
+  \item elements of $\bm{x}$ are denoted by writing its name in italic with a
+    subscript, as in \textbf{$x_1, x_2$} and so on
+  \item to explicitly identify the elements of a vector, write as:
+    \begin{gather}
+      \bm{x} = 
+      \begin{bmatrix}
+        x_1\\
+        x_2\\
+        \vdots\\
+        x_n
+      \end{bmatrix}
+    \end{gather}
+  \item we can define a set containing the indices and write the set as a
+    subscript of the vector 
+  \item to access $x_1, x_3, x_6$; we define set $S = \{1, 3, 6\}$ and write
+    $\bm{x}_S$.
+  \item we use the - sign to indicate the complement, so $x_{-S}$ is the vector
+    containing all of the elements of $\bm{x}$ except for $x_1, x_2, x_3$
+\end{itemize}
+
+\large\textbf{Matrices:}
+\begin{itemize}
+  \item a 2-D array of numbers
+  \item each element is identified by two indices in row, column order
+  \item denoted in uppercase boldface alpha chars as in $\bm{A}$
+  \item elements are denoted in italic but not boldface as in
+    \textit{A}$_{1,1}$ is upper left entry of $\bm{A}$
+  \item ":" as an index is a placeholder for "all"
+  \item $\bm{A}_{i,:}$ denotes the i-th row of $\bm{A}$
+  \item likewise, $\bm{A}_{:,i}$ denotes the i-th colmn of $\bm{A}$
+  \item to explicitly identify the elements of a matrix, write as:
+    \begin{gather}
+      \bm{x} = 
+      \begin{bmatrix}
+        A_{1,1} & A_{1, 2}\\
+        A_{2,1} & A_{2, 2}\\
+      \end{bmatrix}
+    \end{gather}
+  \item additional notation: $f(\bm{A})_{i, j}$ gives element $(i, j)$ of the
+    matrix compted by applying function $f$ to $\bm{A}$
+\end{itemize}
+
+\large\textbf{Tensors:}
+\begin{itemize}
+  \item in some cases we will need an array with more than two axes
+  \item an array of numbers on a rectangular grid with a variable number of axes
+  \item the element of tensor $\bm{A}$ at coordinates $(i, j, k)$ is
+    $\bm{A}_{i, j, k}$
+\end{itemize}
+
+\section{Matrix Operations}
+
 \end{document}
