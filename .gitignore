@@ -1,0 +1,9 @@
+# Ignore all files
+*
+
+# Except for these
+!.gitignore
+!*.tex
+
+# Even if they are in subdirectories
+!*/ 
