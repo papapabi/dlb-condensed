@@ -5,7 +5,7 @@
 \def\realnumbers{\mathbb{R}}
 \def\naturalnumbers{\mathbb{N}}
 \newcommand\NoIndent[1]{%
-  \par\vbox{\parbox[t]{\linewidth}{#1}}%
+	\par\vbox{\parbox[t]{\linewidth}{#1}}%
 }
 
 \begin{document}
@@ -14,104 +14,104 @@
 
 \textbf{Linear Algebra}
 \begin{itemize}
-  \item a branch of mathematics that is widely used throughout science and
-    engineering
-  \item a form of continuous, not discrete math
-  \item read \textit{The Matrix Cookbook} (Petersen and Pedersen, 2006) or
-    \textit{Linear Algebra} (Shilov, 1977) for a more thorough discussion
+	\item a branch of mathematics that is widely used throughout science and
+		engineering
+	\item a form of continuous, not discrete math
+	\item read \textit{The Matrix Cookbook} (Petersen and Pedersen, 2006) or
+		\textit{Linear Algebra} (Shilov, 1977) for a more thorough discussion
 \end{itemize}
 
 \section{Scalars, Vectors, Matrices, and Tensors}
 
 \large\textbf{Scalars:}
 \begin{itemize}
-  \item a single number that is (by the book's notation) written in lowercase
-    alpha italics
-  \item "Let $ s \in \realnumbers $ be the slope of the line" while defining a
-    real-valued scalar
-  \item "Let $ n \in \naturalnumbers $ be the number of units" while defining a
-    natural number scalar
+	\item a single number that is (by the book's notation) written in lowercase
+		alpha italics
+	\item "Let $ s \in \realnumbers $ be the slope of the line" while defining a
+		real-valued scalar
+	\item "Let $ n \in \naturalnumbers $ be the number of units" while defining a
+		natural number scalar
 \end{itemize}
 
 \large\textbf{Vectors:}
 \begin{itemize}
-  \item an array of numbers arranged in a particular order
-  \item think of vectors as things that describe the position points in space,
-    with each element giving the coordinate along a particular axis
-  \item one-indexed, not zero-indexed (according, again, to the book's notation)
-  \item denoted as $\bm{x}$, lowercase boldface
-  \item elements of $\bm{x}$ are denoted by writing its name in italic with a
-    subscript, as in \textbf{$x_1, x_2$} and so on
-  \item to explicitly identify the elements of a vector, write as:
-    \begin{gather}
-      \bm{x} = 
-      \begin{bmatrix}
-        x_1\\
-        x_2\\
-        \vdots\\
-        x_n
-      \end{bmatrix}
-    \end{gather}
-  \item we can define a set containing the indices and write the set as a
-    subscript of the vector 
-  \item to access $x_1, x_3, x_6$; we define set $S = \{1, 3, 6\}$ and write
-    $\bm{x}_S$.
-  \item we use the - sign to indicate the complement, so $x_{-S}$ is the vector
-    containing all of the elements of $\bm{x}$ except for $x_1, x_2, x_3$
+	\item an array of numbers arranged in a particular order
+	\item think of vectors as things that describe the position points in space,
+		with each element giving the coordinate along a particular axis
+	\item one-indexed, not zero-indexed (according, again, to the book's notation)
+	\item denoted as $\bm{x}$, lowercase boldface
+	\item elements of $\bm{x}$ are denoted by writing its name in italic with a
+		subscript, as in \textbf{$x_1, x_2$} and so on
+	\item to explicitly identify the elements of a vector, write as:
+		\begin{gather}
+			\bm{x} = 
+			\begin{bmatrix}
+				x_1\\
+				x_2\\
+				\vdots\\
+				x_n
+			\end{bmatrix}
+		\end{gather}
+	\item we can define a set containing the indices and write the set as a
+		subscript of the vector 
+	\item to access $x_1, x_3, x_6$; we define set $S = \{1, 3, 6\}$ and write
+		$\bm{x}_S$.
+	\item we use the - sign to indicate the complement, so $x_{-S}$ is the vector
+		containing all of the elements of $\bm{x}$ except for $x_1, x_2, x_3$
 \end{itemize}
 
 \large\textbf{Matrices:}
 \begin{itemize}
-  \item a 2-D array of numbers
-  \item each element is identified by two indices in row, column order
-  \item if matrix $\bm{A}$ is of size $m \times n$ we say that $\bm{A} \in
-    \realnumbers^{m \times n}$
-  \item denoted in uppercase boldface alpha chars as in $\bm{A}$
-  \item elements are denoted in italic but not boldface as in
-    \textit{A}$_{1,1}$ is upper left entry of $\bm{A}$
-  \item ":" as an index is a placeholder for "all"
-  \item $\bm{A}_{i,:}$ denotes the i-th row of $\bm{A}$
-  \item likewise, $\bm{A}_{:,i}$ denotes the i-th colmn of $\bm{A}$
-  \item to explicitly identify the elements of a matrix, write as:
-    \begin{gather}
-      \bm{x} = 
-      \begin{bmatrix}
-        A_{1,1} & A_{1, 2}\\
-        A_{2,1} & A_{2, 2}\\
-      \end{bmatrix}
-    \end{gather}
-  \item additional notation: $f(\bm{A})_{i, j}$ gives element $(i, j)$ of the
-    matrix compted by applying function $f$ to $\bm{A}$
+	\item a 2-D array of numbers
+	\item each element is identified by two indices in row, column order
+	\item if matrix $\bm{A}$ is of size $m \times n$ we say that $\bm{A} \in
+		\realnumbers^{m \times n}$
+	\item denoted in uppercase boldface alpha chars as in $\bm{A}$
+	\item elements are denoted in italic but not boldface as in
+		\textit{A}$_{1,1}$ is upper left entry of $\bm{A}$
+	\item ":" as an index is a placeholder for "all"
+	\item $\bm{A}_{i,:}$ denotes the i-th row of $\bm{A}$
+	\item likewise, $\bm{A}_{:,i}$ denotes the i-th colmn of $\bm{A}$
+	\item to explicitly identify the elements of a matrix, write as:
+		\begin{gather}
+			\bm{x} = 
+			\begin{bmatrix}
+				A_{1,1} & A_{1, 2}\\
+				A_{2,1} & A_{2, 2}\\
+			\end{bmatrix}
+		\end{gather}
+	\item additional notation: $f(\bm{A})_{i, j}$ gives element $(i, j)$ of the
+		matrix compted by applying function $f$ to $\bm{A}$
 \end{itemize}
 
 \large\textbf{Tensors:}
 \begin{itemize}
-  \item in some cases we will need an array with more than two axes
-  \item an array of numbers on a rectangular grid with a variable number of axes
-  \item the element of tensor $\bm{A}$ at coordinates $(i, j, k)$ is
-    $\bm{A}_{i, j, k}$
+	\item in some cases we will need an array with more than two axes
+	\item an array of numbers on a rectangular grid with a variable number of axes
+	\item the element of tensor $\bm{A}$ at coordinates $(i, j, k)$ is
+		$\bm{A}_{i, j, k}$
 \end{itemize}
 
 \section{Basic Matrix Operations}
 {\tiny**This section is only meant to be a refresher for relevant deep learning
-  prerequisites, not a comprehensive list of equations and identities}
+	prerequisites, not a comprehensive list of equations and identities}
 \subsection{Transpose}
 \begin{flushleft}
-  The transpose of a matrix is the mirror image across the main diagonal (an
-  element is in the main diagonal if the horizontal index is the same with the
-  vertical index). We denote the transpose of a matrix $\bm{A}$ as
-  $\bm{A}^\intercal$, and it is defined such that:
+	The transpose of a matrix is the mirror image across the main diagonal (an
+	element is in the main diagonal if the horizontal index is the same with the
+	vertical index). We denote the transpose of a matrix $\bm{A}$ as
+	$\bm{A}^\intercal$, and it is defined such that:
 \end{flushleft}
 \begin{equation}
-  (\bm{A}^\intercal)_{i, j} = A_{j, i}
+	(\bm{A}^\intercal)_{i, j} = A_{j, i}
 \end{equation}
 
 Notes: 
 \begin{itemize}
-  \item A vector is a matrix of one row, and so we can write a vector inline as
-    a row matrix and use the transpose operator to turn it into a standard
-    column vector $\bm{x} = [x_1, x_2, x_3]^\intercal$
-  \item a scalar is its own transpose: $a = a^\intercal$
+	\item A vector is a matrix of one row, and so we can write a vector inline as
+		a row matrix and use the transpose operator to turn it into a standard
+		column vector $\bm{x} = [x_1, x_2, x_3]^\intercal$
+	\item a scalar is its own transpose: $a = a^\intercal$
 \end{itemize}
 
 \subsection{Basic Basics}
@@ -122,10 +122,10 @@ Matrix and Scalar Multiplication/Addition:\\
 $\bm{D} = a \cdot \bm{B} + c$ where $D_{i, j} = a \cdot B_{i, j} + c$.\\\\
 Non-conventional convenience notation for deep learning:
 \begin{flushleft}
-  We allow the addition of a matrix and a vector, yielding another matrix 
-  $\bm{C} = \bm{A} + \bm{b}$, where $C_{i, j} = A_{i, j} + b_j$. In simpler
-  terms, vector $\bm{b}$ is added to each row of the matrix. This implicit
-  copying of $\bm{b}$ to many locations is called \textbf{broadcasting}.
+	We allow the addition of a matrix and a vector, yielding another matrix 
+	$\bm{C} = \bm{A} + \bm{b}$, where $C_{i, j} = A_{i, j} + b_j$. In simpler
+	terms, vector $\bm{b}$ is added to each row of the matrix. This implicit
+	copying of $\bm{b}$ to many locations is called \textbf{broadcasting}.
 \end{flushleft}
 
 \section{Multiplying Matrices and Vectors}
@@ -137,11 +137,11 @@ the same columns as $\bm{B}$ has rows. If $\bm{A}$ is $m \times n$, and
 $\bm{B}$ is $n \times p$, then $\bm{C}$ is of shape $m \times p$.
 The product is denoted by:
 \begin{equation}
-  \bm{C} = \bm{A}\bm{B}.
+	\bm{C} = \bm{A}\bm{B}.
 \end{equation}
 And it is defined by:
 \begin{equation}
-  C_{i, j} = \sum_k A_{i, k}B_{k, j}.
+	C_{i, j} = \sum_k A_{i, k}B_{k, j}.
 \end{equation}
 Note: This is different from the element-wise product or Hadamard product,
 denoted as $\bm{A} \odot \bm{B}$ for matrices of the same dimension $m \times
@@ -149,69 +149,91 @@ n$ (Def'n: $(\bm{A} \odot \bm{B})_{i, j} = \bm{A}_{i, j}\bm{B}_{i, j}.$
 \subsection{Dot Product}
 The dot product is the product of two vectors, and is defined as:
 \begin{equation}
-  \bm{a} \cdot \bm{b} = \sum_{i = 1}^n a_ib_i
+	\bm{a} \cdot \bm{b} = \sum_{i = 1}^n a_ib_i
 \end{equation}
 provided they are both of size $n$.\par
 Notes:
 \begin{itemize}
-  \item Informally, multiply each corresponding element and add them altogether
-  \item The dot product is a folding function
-  \item can also be thought of as the matrix product $\bm{x}^\intercal\bm{y}$
+	\item Informally, multiply each corresponding element and add them altogether
+	\item The dot product is a folding function
+	\item can also be thought of as the matrix product $\bm{x}^\intercal\bm{y}$
 \end{itemize}
 \subsubsection{Properties}
 \begin{enumerate}
-  \item Distributive: 
-    \begin{equation}
-      \bm{A}(\bm{B} + \bm{C}) = \bm{AB} + \bm{AC}
-    \end{equation}
-  \item Associative:
-    \begin{equation}
-      \bm{A}(\bm{BC}) = (\bm{AB})\bm{C}
-    \end{equation}
-  \item Matrix multiplication is not commutative. (That is, $\bm{AB} = \bm{BA}$
-    does not always hold. However, the dot product is commutative:
-    \begin{equation}
-      \bm{x}^\intercal\bm{y} = \bm{y}^\intercal\bm{x}
-    \end{equation}
-  \item Transpose of a matrix product:
-    \begin{equation}
-      (\bm{AB})^\intercal = \bm{B}^\intercal\bm{A}^\intercal
-    \end{equation}
-    \NoIndent{*Identity matrix. An identity matrix of size $n$ (denoted $I_n$)
-      is the $n \times n$ square matrix with ones on the main diagonal and
-      zeroes elsewhere:
-      \begin{equation*}
-        I_1 = [1],
-        I_2 = \begin{bmatrix}
-          1 & 0\\
-          0 & 1
-        \end{bmatrix},
-        I_3 = \begin{bmatrix}
-          1 & 0 & 0\\
-          0 & 1 & 0\\
-          0 & 0 & 1
-        \end{bmatrix}
-      \end{equation*}}
-  \item Existence of Multiplication Identity:
-    \begin{equation}
-      \bm{I}_m\bm{A} = \bm{A}\bm{I}_n = \bm{A}
-    \end{equation}
-    Provided $\bm{A}$ is of size $m \times n$.
+	\item Distributive: 
+		\begin{equation}
+			\bm{A}(\bm{B} + \bm{C}) = \bm{AB} + \bm{AC}
+		\end{equation}
+	\item Associative:
+		\begin{equation}
+			\bm{A}(\bm{BC}) = (\bm{AB})\bm{C}
+		\end{equation}
+	\item Matrix multiplication is not commutative. (That is, $\bm{AB} = \bm{BA}$
+		does not always hold. However, the dot product is commutative:
+		\begin{equation}
+			\bm{x}^\intercal\bm{y} = \bm{y}^\intercal\bm{x}
+		\end{equation}
+	\item Transpose of a matrix product:
+		\begin{equation}
+			(\bm{AB})^\intercal = \bm{B}^\intercal\bm{A}^\intercal
+		\end{equation}
+	\item Existence of Multiplication Identity:
+		\begin{equation}
+			\bm{I}_m\bm{A} = \bm{A}\bm{I}_n = \bm{A}
+		\end{equation}
+		Provided $\bm{A}$ is of size $m \times n$.
 \end{enumerate}
 
 \subsection{System of Linear Equations}
 In matrix form, it is as such:
 \begin{equation}
-  \bm{Ax} = \bm{b}
+	\label{linear_equation}
+	\bm{Ax} = \bm{b}
 \end{equation}
 where $\bm{A} \in \realnumbers^{m \times n}$ is a known matrix, $\bm{b} \in
 \realnumbers^m$ is a known vector, and $\bm{x} \in \realnumbers^n$ is a vector
 of unknown variables we would like to solve for. Explicitly written:
 \begin{align}
-  \bm{A}_{1, :}\bm{x} & = b_1\\
-  \bm{A}_{2, :}\bm{x} & = b_2\\
-  & \hdots\\
-  \bm{A}_{m, :}\bm{x} & = b_m
+	\bm{A}_{1, :}\bm{x} & = b_1\\
+	\bm{A}_{2, :}\bm{x} & = b_2\\
+	& \hdots\\
+	\bm{A}_{m, :}\bm{x} & = b_m
 \end{align}
+
+\subsection{Identity and Inverse Matrices}
+An \textbf{identity matrix} of size $n$ (denoted $I_n$)
+is the $n \times n$ square matrix with ones on the main diagonal and
+zeroes elsewhere:
+\begin{equation*}
+	I_1 = [1],
+	I_2 = \begin{bmatrix}
+		1 & 0\\
+		0 & 1
+	\end{bmatrix},
+	I_3 = \begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix}
+\end{equation*}
+The \textbf{matrix inverse} of $\bm{A}$ is denoted as $\bm{A}^{-1}$, and it defined as:
+\begin{equation}
+	\bm{A}^{-1}\bm{A} = \bm{I}_n
+\end{equation}
+We can now solve \ref{linear_equation} by the following steps:
+\begin{align}
+	\bm{Ax} & = \bm{b}\\
+	\bm{A}^{-1}\bm{Ax} & = \bm{A}^{-1}\bm{b}\\
+	\bm{I}_n\bm{x} & = \bm{A}^{-1}\bm{b}\\
+	\bm{x} & = \bm{A}^{-1}\bm{b}.
+\end{align}
+Of course, this process hinges on the fact that $\bm{A}^{-1}$ exists.
+But in practice, we almost never use this due to the fact that digital
+computers can only represent $\bm{A}^{-1}$ with limited precision. Algorithms
+that make use of $\bm{b}$ can usually obtain more accurate estimaes of
+$\bm{x}$.
+
+\subsection{Linear Dependence and Span}
+
 
 \end{document}
