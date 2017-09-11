@@ -220,9 +220,10 @@ zeroes elsewhere:
   \end{bmatrix}
 \end{equation*}
 The \textbf{matrix inverse} of $\bm{A}$ is denoted as $\bm{A}^{-1}$, and it defined as:
-\begin{equation}
-  \bm{A}^{-1}\bm{A} = \bm{I}_n
-\end{equation}
+\begin{align}
+  \bm{A}^{-1}\bm{A} & = \bm{I}_n\\
+  \bm{A}\bm{A}^{-1} & = \bm{I}_n
+\end{align}
 We can now solve \ref{linear_equation} by the following steps:
 \begin{align}
   \bm{Ax} & = \bm{b}\\
@@ -238,5 +239,68 @@ $\bm{x}$.
 
 \section{Linear Dependence and Span}
 
+In order for the inverse ($\bm{A}^{-1}$) of a matrix $\bm{A}$ to exist, equation
+\ref{linear_equation} must have exactly one solution for every value of
+$\bm{b}$. But it is also possible for the system to have a) no solutions (no
+intersection) or b) infinitely many solutions (colinear). Strictly only cases a
+and b are possible for every system of equations.
+
+A good inuition to a solution of a system of linear equations is this: think of
+the columns of $\bm{A}$ as specifying different directions we can travel from
+the \textbf{origin}, and determine how many ways there are to reach $\bm{b}$.
+In this view, each element of $\bm{x}$ specifies how far we should travel in
+each of those directions, with $x_i$ specifying how far to move in the
+direction of column $i$ in $\bm{A}$:
+\begin{equation}
+  \bm{Ax} = \sum_i x_i\bm{A}_{:, i}
+\end{equation}
+
+In general, this operation is called a \textbf{linear combination}. A linear
+combination is simply some set of vectors \{$\bm{v}_1, \bm{v}_2, ..., \bm{v}_n$\}
+each multiplied by its own scaling factor c and adding the results:
+\begin{equation}
+  \sum_i c_i\bm{v}_i
+\end{equation}
+
+A \textbf{span} of a set of vectors is the set of all vectors that can be
+formed by linear combinations of the original vectors. 
+Note: Any two noncollinear vectors can represent the whole $\realnumbers^2$
+space.
+
+Thus, $\bm{Ax} = \bm{b}$ amounts to testing whether $\bm{b}$ is in the span of
+the columns of $\bm{A}$. This particular span is called the \textbf{column
+  space} or the \textbf{range} of $\bm{A}$.
+
+A set of vectors is \textbf{linearly independent} if no vector in the set is a
+linear combination of the other vectors.
+
+Notes:
+\begin{itemize}
+  \item Adding a new vector in a set of vectors that is a linear combination of
+    the other vectors in the set does not add any new points to the set's span
+  \item For the column space/range of a matrix to encompass all of
+    $\realnumbers^m$, the matrix must contain at least one set of $m$ linearly
+    independent columns
+  \item No set of $m$-dimensional vectors can have more than $m$ mutually
+    linearly independent columns
+  \item But, a matrix with more than $m$ columns may contain more than one such
+    set
+  \item In order for a matrix to have an inverse, we need to ensure that
+    equation \ref{linear_equation} has \textit{at most} one solution for each
+    value of $\bm{b}$, i.e., ensuring that the matrix has at most $m$ columns
+\end{itemize}
+
+Tying it all together, this means that the matrix must be \textbf{square}, that
+is, $m=n$, and all of the columns must be linearly independent.
+
+Random:
+\begin{itemize}
+  \item A square matrix with linearly independent columns is called a
+    \textbf{singular} matrix 
+  \item If $\bm{A}$ is not square or square but not singular, it can stil be
+    possible to solve it.  However, matrix inversion cannot be used to find the
+    solution
+  \item For square matrices the left and right inverse are equal
+\end{itemize}
 
 \end{document}
