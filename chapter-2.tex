@@ -28,7 +28,7 @@
 
 \section{Scalars, Vectors, Matrices, and Tensors}
 
-\large\textbf{Scalars:}
+\subsection{Scalars}
 \begin{itemize}
   \item a single number that is (by the book's notation) written in lowercase
     alpha italics
@@ -38,7 +38,7 @@
     natural number scalar
 \end{itemize}
 
-\large\textbf{Vectors:}
+\subsection{Vectors}
 \begin{itemize}
   \item an array of numbers arranged in a particular order
   \item think of vectors as things that describe the position points in space,
@@ -65,7 +65,7 @@
     containing all of the elements of $\bm{x}$ except for $x_1, x_2, x_3$
 \end{itemize}
 
-\large\textbf{Matrices:}
+\subsection{Matrices}
 \begin{itemize}
   \item a 2-D array of numbers
   \item each element is identified by two indices in row, column order
@@ -89,7 +89,7 @@
     matrix compted by applying function $f$ to $\bm{A}$
 \end{itemize}
 
-\large\textbf{Tensors:}
+\subsection{Tensors}
 \begin{itemize}
   \item in some cases we will need an array with more than two axes
   \item an array of numbers on a rectangular grid with a variable number of axes
@@ -356,7 +356,6 @@ Random:
   \item pre-multiplying a diagonal matrix to a square matrix of the same size
     \textbf{scales} each element of the square matrix row-wise with the
     diagonal matrix:
-    \begin{scriptsize}
       \begin{equation*}
         \begin{bmatrix}
           k_1 & 0 & \hdots & 0\\
@@ -378,7 +377,6 @@ Random:
           k_ma_{m1} & k_ma_{m2} & \hdots & k_ma_{mn}\\
         \end{bmatrix}
       \end{equation*}
-    \end{scriptsize}
   \item post-multiplying a diagonal matrix scales each element of the square
     matrix column-wise with the diagonal matrix
 \end{itemize}
@@ -420,18 +418,21 @@ Random:
     \begin{equation}
       \hat{\bm{u}} = \frac{\bm{u}}{|\bm{u}|}
     \end{equation}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
 \end{itemize}
-
 \subsection{Orthogonal Matrices and Vectors}
 \begin{itemize}
   \item two vectors are orthogonal if $\bm{x}^\intercal\bm{y} = 0$ ($\cos(90) =
     0$)
   \item in $\realnumbers^n$, at most $n$ vectors may be mutually orthogonal
     with nonzero norm
-    \\
-    \\
-    \\
-    \\
   \item vectors that are of unit norm and are orthogonal are called
     \textbf{orthonormal}
   \item an orthogonal matrix is a square matrix whose columns and rows are
@@ -595,8 +596,8 @@ Properties:
     \realnumbers$
   \item the determinant is equal to the product of all the eigenvalues of the
     matrix
-  \item \textbf{the absolute value of the determinant can be thought of as the measure
-    of how much the matrix expands or contracts when multiplied with a
+  \item \textbf{the absolute value of the determinant can be thought of as the
+      measure of how much the matrix expands or contracts when multiplied with a
     transforamtion matrix}
   \item if det($\bm{A}$) $= 0$ then space is contracted completely along at
     least one dimension, causing it to lose all of its volume
