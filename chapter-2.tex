@@ -8,6 +8,7 @@
 \newcommand\NoIndent[1]{%
   \par\vbox{\parbox[t]{\linewidth}{#1}}%
 }
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 \begin{document}
 \stepcounter{chapter}
@@ -96,8 +97,6 @@
 \end{itemize}
 
 \section{Basic Matrix Operations}
-{\tiny**This section is only meant to be a refresher for relevant deep learning
-  prerequisites, not a comprehensive list of equations and identities}
 \subsection{Transpose}
 \begin{flushleft}
   The transpose of a matrix is the mirror image across the main diagonal (an
@@ -301,6 +300,50 @@ Random:
     possible to solve it.  However, matrix inversion cannot be used to find the
     solution
   \item For square matrices the left and right inverse are equal
+\end{itemize}
+
+\section{Norms}
+\begin{itemize}
+  \item the size of a vector is given by a function called the $L^p$ norm:
+    \begin{equation}
+      \norm{\bm{x}}_p = (\sum_i {\lvert x_i \rvert}^p)^{\frac{1}{p}}
+    \end{equation}
+  \item norms satisfy the triangle inequality: $f(\bm{x} + \bm{y}) \leq
+    f(\bm{x}) + f(\bm{y})$
+  \item also, $\forall \alpha \in \realnumbers, f(\alpha\bm{x}) =
+    |\alpha|f(\bm{x})$
+  \item the $L^2$ norm is called the \textbf{Euclidean norm}
+  \item the squared $L^2$ norm, calclated simply as $\bm{x}^\intercal\bm{x}$, is
+    more convenient to work with computationally than the $L^2$ norm itself
+  \item but in many contexts the squared $L^2$ norm may be undesirable because
+    it increases very slowly near the origin
+  \item $L^\infty$ norm, the \textbf{max norm}, is the element with the largest
+    magnitude in the vector:
+    \begin{equation}
+      \norm{\bm{x}}_\infty = \max_i |x_i|
+    \end{equation}
+  \item the size of a matrix is given by the \textbf{Frobenius norm}:
+    \begin{equation}
+      \norm{\bm{A}}_F = \sqrt{\sum_{i=1}^m\sum_{j=1}^n|a_{ij}|^2}
+    \end{equation}
+    analogous to the Eucledean norm of a vector
+\end{itemize}
+
+\section{Special Kinds of Matrices and Vectors}
+\subsection{Diagonal Matrices}
+\begin{itemize}
+  \item Diagonal matrices have non-zero entries only along the main
+    diagonal
+  \item Formally, matrix $\bm{D}$ is diagonal iff $D_{i, j} = 0 \text{  }
+    \forall i \neq j$
+  \item we write $diag(\bm{v})$ to denote a square diagonal matrix whose
+    entries are given by vector $\bm{v}$
+  \item very computationally efficient multiplication and inversion (the
+    inverse exists iff every diagonal entry is nonzero)
+  \item $diag(\bm{v})\bm{x} = \bm{v} \odot \bm{x}$
+  \item $diag(\bm{v})^{-1} =
+    diag([\frac{1}{v_1},\frac{1}{v_2},...,\frac{1}{v_n}]^\intercal)$
+
 \end{itemize}
 
 \end{document}
