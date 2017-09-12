@@ -468,8 +468,9 @@ Random:
     to this eigenvector
   \item $\lambda \in \realnumbers$, and even $\lambda \in \complexnumbers$!
   \item \textbf{eigenvectors are vectors, which, after being applied with a
-      transformation matrix, do not change direction, but can change in
-      magnitude}
+      transformation matrix, may scale in length (change magnitude), but do NOT
+      change in direction}
+  \item \textbf{the amounts in which eigenvectors strech are called eigenvalues!}
 \end{itemize}
 Properties:
 \begin{itemize}
@@ -587,7 +588,18 @@ Properties:
   \item a scalar is its own trace: $a = Tr(a)$
 \end{itemize}
 
-
-
-
+\section{The Determinant}
+\begin{itemize}
+  \item the determinant (only exists for square matrices), denoted as
+    det($\bm{A}$), is a function mapping matrices to scalars $s \in
+    \realnumbers$
+  \item the determinant is equal to the product of all the eigenvalues of the
+    matrix
+  \item \textbf{the absolute value of the determinant can be thought of as the measure
+    of how much the matrix expands or contracts when multiplied with a
+    transforamtion matrix}
+  \item if det($\bm{A}$) $= 0$ then space is contracted completely along at
+    least one dimension, causing it to lose all of its volume
+  \item if det($\bm{A}$) $= 0$ then the transformation preserves volume
+\end{itemize}
 \end{document}
