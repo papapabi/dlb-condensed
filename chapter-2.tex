@@ -551,6 +551,43 @@ Miscellaneous:
 \end{itemize}
 
 \section{The Moore-Penrose Pseudoinverse}
+Matrix inversion is not defined for non-square matrices. Suppose we want to
+make a left-inverse $\bm{B}$ of a non-square matrix $\bm{A}$, so that we can
+solve a linear equation:
+\begin{equation}
+  \bm{Ax} = \bm{y}
+\end{equation}
+by left-multiplying each side to obtain:
+\begin{equation}
+  \bm{x} = \bm{By}
+\end{equation}
+The Moore-Pensrose Pseudoinverse allows us to make headway in these cases:
+\begin{equation}
+  \bm{A}^+ = \bm{VD}^+\bm{U}^\intercal
+\end{equation}
+where $\bm{U}$, $\bm{D}$, and $\bm{V}$ are the singular value decomposition of
+$\bm{A}$, and the pseudoinverse $\bm{D}^+$ of a diagonal matrix $\bm{D}$ by
+taking the reciprocal of its non-zero element then taking the tranpose of the
+resulting matrix.
+
+\section{The Trace Operator}
+The trace is the sum of all the diagonal entries of a matrix:
+\begin{equation}
+  Tr(\bm{A}) = \sum_i \bm{A}_{i, i}
+\end{equation}
+The Frobenius norm can be written as:
+\begin{equation}
+  \norm{\bm{A}}_F = \sqrt{Tr(\bm{AA}^\intercal)}
+\end{equation}
+Properties:
+\begin{itemize}
+  \item invariant to the transpose operator: $Tr(\bm{A}) = Tr(\bm{A}^\intercal)$
+  \item the traces of the cyclic permutations of the products of $n$ matrices,
+    assuming that the products exist are the same
+  \item a scalar is its own trace: $a = Tr(a)$
+\end{itemize}
+
+
 
 
 \end{document}
