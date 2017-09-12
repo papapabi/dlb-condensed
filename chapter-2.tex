@@ -5,6 +5,7 @@
 \usepackage{bm} % boldface math symbols
 \def\realnumbers{\mathbb{R}}
 \def\naturalnumbers{\mathbb{N}}
+\def\complexnumbers{\mathbb{C}}
 \newcommand\NoIndent[1]{%
   \par\vbox{\parbox[t]{\linewidth}{#1}}%
 }
@@ -445,4 +446,79 @@ Random:
   \item orthogonal matrices are of interest because their inverse is easy to
     compute
 \end{itemize}
+
+\section{Eigendecomposition}
+\begin{itemize}
+  \item many mathematical objects can be understood better by breaking them
+    into constituent parts
+  \item we can decompose matrices in ways that show us more information about
+    their functional properties that is not immediately obvious from the
+    standard representation of a matrix
+  \item one of the most widely-used kinds of matrix decomposition is
+    \textbf{eigendecomposition}
+  \item in the following equation:
+    \begin{equation}
+      \label{eigendecomposition}
+      \bm{Av} = \lambda\bm{v}
+    \end{equation}
+  \item an \textbf{eigenvector} of a square matrix $\bm{A}$ is a non-zero
+    vector $\bm{v}$ such that the multiplication by $\bm{A}$ alters only the
+    scale of $\bm{v}$
+  \item the scalar $\lambda$ is known as the \textbf{eigenvalue} corresponding
+    to this eigenvector
+  \item $\lambda \in \realnumbers$, and even $\lambda \in \complexnumbers$!
+  \item \textbf{eigenvectors are vectors, which, after being applied with a
+      transformation matrix, do not change direction, but can change in
+      magnitude}
+\end{itemize}
+Properties:
+\begin{itemize}
+  \item different eigenvectors correspond to different eigenvalues for the same
+    $\bm{A}$
+  \item if $\bm{v}$ is an eigenvector for $\bm{A}$, then so is any rescaled
+    vector $s\bm{v}$ for $s \in \realnumbers, s \neq 0$
+  \item moreoever, $s\bm{v}$ still has the same eigenvalue
+  \item for this reason we look for unit eigenvectors
+  \item \textbf{left eigenvector}: $\bm{v}^\intercal\bm{A} =
+    \lambda\bm{v}^\intercal$ (but we are usually concerned with right
+    eigenvectors)
+\end{itemize}
+\textbf{Eigendecomposition:}\\
+Suppose that a matrix $\bm{A}$ has $n$ linearly independent eigenvectors,
+$\{\bm{v}^{(1)},...,\bm{v}^{(n)}\}$, with corresponding eigenvectors
+$\{\lambda_1,...,\lambda_n\}$.
+
+We may concatenate the eigenvectors to form matrix $\bm{V}$ with one
+eigenvector per column: 
+\begin{equation*}
+  \bm{V} = [\bm{v}^{(1)},...,\bm{v}^{(n)}]
+\end{equation*}
+
+Likewise, concatenate all of the eigenvalues column-wise:
+\begin{equation*}
+  \bm{\lambda} = [\lambda_1,...,\lambda_n]^\intercal
+\end{equation*}
+
+The \textbf{eigendecomposition} is then given by:
+\begin{equation}
+  \bm{A} = \bm{V}diag(\bm{\lambda})\bm{V}^{-1}
+\end{equation}
+
+Keep in mind that we are \textit{constructing} eigendecomposition with
+eigenvectors and eigenvalues we know beforehand.
+
+Every real symmetric matrix can be decomposed into an expression using only
+real-valued eigenvectors and eigenvales:
+\begin{equation}
+  \bm{A} = \bm{Q}\bm{\lambda}\bm{Q}^{-1}
+\end{equation}
+where $\bm{Q}$ is an orthogonal matrix composed of eigenvectors of $\bm{A}$,
+and $\bm{\lambda}$ is a diagonal matrix.
+
+An $n \times n$ \textbf{diagonizable} matrix must have a set of $n$ linearly
+independent eigenvectors -- the columns of the diagonalizing matrix are such a
+set.
+
+
+
 \end{document}
