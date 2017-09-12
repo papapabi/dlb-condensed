@@ -519,6 +519,38 @@ An $n \times n$ \textbf{diagonizable} matrix must have a set of $n$ linearly
 independent eigenvectors -- the columns of the diagonalizing matrix are such a
 set.
 
+Miscellaneous:
+\begin{itemize}
+  \item a matrix is singular iff any of the eigenvalues are zero
+  \item all positive eigenvalues: \textbf{positive definite}
+  \item all positive or zero-valued: \textbf{positive semidefinite}
+  \item all negative eigenvalues: \textbf{negative definite}
+  \item all negative or zero-valued: \textbf{negative semidefinite}
+\end{itemize}
+
+\section{Singular Value Decomposition}
+\begin{itemize}
+  \item factorizes a matrix into \textbf{singular vectors} and \textbf{singular
+      values}
+  \item more generally applicable as opposed to eigendecomposition
+  \item every real matrix has a singular value decomposition, but the same is
+    not true for eigendecomposition
+  \item SVD:
+    \begin{equation}
+      \bm{A} = \bm{UDV}^\intercal
+    \end{equation}
+    where: $\bm{U}$ is an $m \times m$ orthogonal matrix, $\bm{D}$ to be an $m
+    \times n$ square (or non-square) diagonal matrix, and $\bm{V}$ to be an $n
+    \times n$ orthogonal matrix.
+  \item the elements of $\bm{D}$ are known as the \textbf{singular values} of
+    $\bm{A}$
+  \item the columns of $\bm{U}$ are known as the \textbf{left-singular vectors}
+  \item the columns of $\bm{V}$ are known as the \textbf{right-singular vectors}
+  \item the most useful feature of SVD is that we can use it to partially
+    generalize matrix inversion to non-square matrices
+\end{itemize}
+
+\section{The Moore-Penrose Pseudoinverse}
 
 
 \end{document}
