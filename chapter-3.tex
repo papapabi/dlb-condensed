@@ -4,4 +4,60 @@
 \usepackage[margin=0.75in]{geometry}
 
 \begin{document}
+\setcounter{chapter}{2}
+\chapter{Probability and Information Theory}
+Probability Theory
+\begin{itemize}
+  \item a mathematical framework for representing uncertain statements
+  \item provides a means of quantifing uncertainty
+  \item allows us to reason in the presence of uncertainty
+  \item this is useful for AI systems because the laws of probability tell us
+    how they should reason, also for analyzing their behavior
+  \item was originally developed to analyze the frequencies of events
+  \item defines a set of formal rules for determining the likelihood of a
+    proposition being true given the likelihood of other propositions
+\end{itemize}
+Information Theory
+\begin{itemize}
+  \item allows us to quantify the amount of uncertainty in a probability
+    distribution
+\end{itemize}
+
+\subsection{Why Probability?}
+\begin{itemize}
+  \item even though many branches of computer science deal mostly with entities
+    that are deterministic/certain, machine learning ALWAYS deals with
+    uncertain and sometimes stochastic quantities
+  \item nearly all activities require some ability to reason amidst uncertainty
+  \item in fact it is hard to think of examples beyond mathematical statements
+    (that are true by definition) 
+\end{itemize}
+
+\textbf{3} possible sources of uncertainty:
+\begin{enumerate}
+  \item inherent stochasticity in the system being modeled
+  \item incomplete observability (even deterministic systems can appear
+    stochastic when we cannot observe all the variables the drive the system's
+    behavior)
+  \item incomplete modeling (when we use a model that must discard some of the
+    information we have observed, the discarded information can result in
+    uncertainty in the model's predictions)
+\end{enumerate}
+
+\textbf{Frequentist probability}:
+\begin{itemize}
+  \item related directly to the rates at which \textit{repeatable} events occur
+  \item events like drawing a certain hand of cards in a poker game (repeatable)
+\end{itemize}
+
+\textbf{Bayesian probability}:
+\begin{itemize}
+  \item related to the qualitative levels of uncertainty (\textbf{degree of
+      belief})
+  \item like when a doctor says that a patient has a 40\% chance of having the
+    flu (degree of belief = 40 percent)
+\end{itemize}
+
+It is proven that Bayesian probabilities are controlled by the same axioms as
+the ones that govern Frequentist probabilities. (Ramsey, 1926)
 \end{document}
