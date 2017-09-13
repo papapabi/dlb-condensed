@@ -129,6 +129,22 @@ The probability that $x$ lies in the interval $[a, b]$ is given by $\int_{[a,
   b]} p(x)dx$.
 
 \section{Marginal Probability}
+\begin{itemize}
+  \item used when we know the probability distribution across a set of
+    variables and we want to know the probability distribution over just a
+    subset of them
+  \item the probability distribution over the subset is known as the
+    \textbf{marginal probability distribution}
+  \item discrete variables (derived by the \textbf{sum rule}:
+    \begin{equation}
+      \forall x \in \text{x}, P(\text{x} = x) = \sum_y P(\text{x} = x, \text{y}
+      = y)
+    \end{equation}
+  \item continuous variables:
+    \begin{equation}
+      p(x) = \int p(x, y)dy
+    \end{equation}
+\end{itemize}
 
 
 
