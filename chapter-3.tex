@@ -34,7 +34,7 @@ Information Theory
     (that are true by definition) 
 \end{itemize}
 
-\textbf{3} possible sources of uncertainty:
+\textbf{(3)} possible sources of uncertainty:
 \begin{enumerate}
   \item inherent stochasticity in the system being modeled
   \item incomplete observability (even deterministic systems can appear
@@ -101,12 +101,35 @@ states.
   \item joint PMFs act on many variables simultaneously: $P(\text{x} = x,
     \text{y} = y)$, can also be written as $P(x, y)$ for brevity
 \end{itemize}
-\textbf{(3)} properties for a function to be a PMF:
+\textbf{(3)} properties for a function $P$ to be a PMF:
 \begin{enumerate}
   \item The domain of $P$ must be the set of all possible values of x.
   \item $\forall x \in \text{x}, 0 \leq P(x) \leq 1$. 
   \item $\sum_{x \in \text{x}} P(x) = 1$. We refer to this property as being
     \textbf{normalized}.
 \end{enumerate}
+
+\subsection{Continuous Variables and Probability Density Functions}
+A \textbf{probability density function} (PDF) is needed when continuous random
+varibles are involved rather than a PMF. 
+
+\textbf{(3)} properties for a function $p$ to be a PDF:
+\begin{enumerate}
+  \item The domain of $p$ must be the set of all possible states of x.
+  \item $\forall x \in \text{x}, p(x) \geq 0$. Note that we do not require
+    $p(x) \leq 1$.
+  \item $\int_{-\infty}^{\infty} p(x)dx = 1$.
+\end{enumerate}
+
+Note that a PDF $p(x)$ does not give the probability of a particular state
+directly; instead it gives the probability of landing in an infinitesimal
+region with volume $\delta x$ is given by $p(x)\delta x$.
+
+The probability that $x$ lies in the interval $[a, b]$ is given by $\int_{[a,
+  b]} p(x)dx$.
+
+\section{Marginal Probability}
+
+
 
 \end{document}
