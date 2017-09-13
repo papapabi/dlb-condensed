@@ -66,6 +66,9 @@ the ones that govern Frequentist probabilities. (Ramsey, 1926)
 \begin{itemize}
   \item a \textbf{random variable} is a variable that can take on different
     variables randomly
+  \item typically denoted by a lowercase letter in plain typeface, and the
+    values it can take on with lowercase script letters
+  \item random variable x, with possible values $x_1$ and $x_2$
   \item on its own, it is merely a description of which states are possible 
   \item it must be coupled with a probability distribution that specifies how
     likely each of these states are
@@ -75,4 +78,35 @@ the ones that govern Frequentist probabilities. (Ramsey, 1926)
     states)
   \item a continuous random variable is associated with a real value
 \end{itemize}
+
+\section{Probability Distributions}
+A \textbf{probability distribution} is a description of how likely a random
+variable or a set of random variables is to take on each of its possible
+states.
+
+\subsection{Discrete Variables and Probability Mass Functions}
+\begin{itemize}
+  \item a probability distribution over discrete variables may be described
+    using a \textbf{probability mass function} (PMF)
+  \item we denote them with a capital $P$
+  \item the PMF maps from a state of a random variable to the probability of
+    the random variable taking on that state
+  \item in other words, the probability that x = $x$ is $P(x)$, with a
+    probability of 1 indicating that x = $x$ is certain and a probability of 0
+    indicating that x = $x$ is impossible
+  \item to disambiguate, sometime we write the name of the random variable
+    inside the function's argument explicitly: $P(\text{x} = x)$
+  \item states that a random variable x comes from a particular distribution: x
+    $ \sim P(x)$
+  \item joint PMFs act on many variables simultaneously: $P(\text{x} = x,
+    \text{y} = y)$, can also be written as $P(x, y)$ for brevity
+\end{itemize}
+\textbf{(3)} properties for a function to be a PMF:
+\begin{enumerate}
+  \item The domain of $P$ must be the set of all possible values of x.
+  \item $\forall x \in \text{x}, 0 \leq P(x) \leq 1$. 
+  \item $\sum_{x \in \text{x}} P(x) = 1$. We refer to this property as being
+    \textbf{normalized}.
+\end{enumerate}
+
 \end{document}
