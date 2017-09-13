@@ -164,6 +164,18 @@ The probability that $x$ lies in the interval $[a, b]$ is given by $\int_{[a,
     event that never occurs
 \end{itemize}
 
+\section{The Chain Rule of Conditional Probabilities}
+Any joint probability distribution over $n$ random variables may be decomposed
+into conditional distributions over only one variable:
+\begin{equation}
+  P(\text{x}^{(1)},...,\text{x}^{(n)}) = P(\text{x}^{(1)} \prod_{i = 2}^{n}
+  P(\text{x}^{(i)} \text{ } | \text{ } \text{x}^{(1)},..., \text{x}^{(i-1)})
+\end{equation}
+This is called the \textbf{chain rule} or the \textbf{product rule} of
+probability.\\
+Given this, $P(a, b, c) = P(a | b,c)P(b|c)P(c)$.
+
+\section{Independence and Conditional Independence}
 
 
 \end{document}
