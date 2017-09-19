@@ -2,6 +2,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage[margin=0.75in]{geometry}
+\def\expectation{\mathbb{E}}
 
 \begin{document}
 \setcounter{chapter}{2}
@@ -176,6 +177,73 @@ probability.\\
 Given this, $P(a, b, c) = P(a | b,c)P(b|c)P(c)$.
 
 \section{Independence and Conditional Independence}
+Independence:
+\begin{itemize}
+  \item two random variables x and y are \textbf{independent} if their
+    probability distribution can be expressed as a product of two factors, one
+    involving only x and one involving only y:
+    \begin{equation}
+      \forall x \in \text{x}, y \in \text{y}, p(\text{x} = x, \text{y} = y) =
+      p(\text{x} = x)p(\text{y} = y)
+    \end{equation}
+\end{itemize}
+lmao just look up conditional independence it's too wordy to type
 
+\section{Expectation, Variance, and Covariance}
+\subsection{Expectation}
+\begin{itemize}
+  \item the \textbf{expectation}, or \textbf{expected value}, of some function
+    $f(x)$ with respect to a probability distribution $P(x)$ is the average, or
+    mean value, that $f$ takes on when $x$ is drawn from $P$.
+  \item discrete:
+    \begin{equation}
+      \expectation_{\text{x} \sim P}[f(x)] = \sum_x P(x)f(x)
+    \end{equation}
+  \item continuous:
+    \begin{equation}
+      \expectation_{\text{x} \sim P}[f(x)] = \int p(x)f(x)
+    \end{equation}
+  \item by default, we assume that $\expectation{[cdot]}$ averages over all the
+    values of the random variables inside the brackets
+  \item Expectations are linear:
+    \begin{equation}
+      \expectation{[\alpha f(x) + \beta g(x)]} = \alpha \expectation
+      {[f(x)]} + \beta \expectation{[g(x)]}
+    \end{equation}
+    where $\alpha$ and $\beta$ are not dependent on $x$
+\end{itemize}
 
-\end{document}
+\subsection{Variance}
+\begin{itemize}
+  \item gives a measure of how much the values of a function of a random
+    variable x vary as we sample different values of $x$ from its probability
+    distribution:
+    \begin{equation}
+      Var(f(x)) = \expectation{[(f(x)- \expectation{[f(x)]})^{2}]}
+    \end{equation}
+  \item when the variance is low, the values of $f(x)$ cluster near their
+    expected value
+  \item the square root of the variance is called the \textbf{standard
+      deviation}
+\end{itemize}
+
+\subsection{Covariance}
+\begin{itemize}
+  \item gives some sense of how much two values are linearly related to each
+    other, as well as the scale of these variables:
+    \begin{equation}
+      Cov(f(x),g(y)) = \expectation{[(f(x) - \expectation{[f(x)]})(g(y) -
+        \expectation{[g(y)]})]}
+    \end{equation}
+  \item high values of the covariance mean that the values change very much and
+    are both far from their respective means at the same time
+  \item if the sign of the covariance is positive, then both variables tend to
+    take on relatiely high values simultaneously
+  \item if the sign of the covariance is negative, 2then one variable tends to
+    take on a relatively high value at the times that the other takes on a
+    relatively low value and vice versa
+\end{itemize}
+
+\section{Common Probability Distirbutions}
+
+\end{document} 
