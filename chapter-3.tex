@@ -421,7 +421,7 @@ $k$ is finite.
           /pgf/number format/fixed zerofill,
           /pgf/number format/precision=1},
         grid = major,
-        width=10cm,
+        width=9cm,
         height=8cm,
         grid style={dashed, gray!30},
         xmin=-1,
@@ -471,5 +471,23 @@ The following properties are useful enough that you may wish to memorize them:
   \zeta(x) = \int_{-\infty}^x \sigma(y)dy \\
   \zeta(x) - \zeta(-x) = x
 \end{align}
+
+\section{Bayes' Rule}
+\begin{itemize}
+  \item the switching of orders in a conditional probability
+  \item when we know $P(\text{y} | \text{x})$ and need to know $P(\text{x} |
+    \text{y})$ (but we have to know what $P(\text{x})$ is)
+  \item we can compute for the desired quantity via \textbf{Bayes' Rule}:
+    \begin{equation}
+      P(\text{x} | \text{y}) = \frac{P(\text{x})P(\text{y} |
+        \text{x})}{P(\text{y})}
+    \end{equation}
+    alternatively,
+    \begin{equation}
+      P(\text{y}) = \sum_x P(\text{y}|\text{x})P(\text{x})
+    \end{equation}
+  \item named after Reverend Thomas Bayes
+  \item general version was independently discovered by Pierre-Simon Laplace
+\end{itemize}
 
 \end{document} 
