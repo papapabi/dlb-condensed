@@ -2,6 +2,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{bm}
+\usepackage{pgfplots}
+\usepackage{tikz}
 \usepackage[margin=0.75in]{geometry}
 \def\expectation{\mathbb{E}}
 
@@ -395,6 +397,48 @@ $k$ is finite.
   \item the mixture model allows us to briefly glimpse a concept that will be
     of paramount importance later -- the concept of a \textbf{latent variable}
   \item a latent variable is a random variable that we cannot observe directly
+\end{itemize}
+
+\section{Useful Properties of Common Functions}
+\begin{itemize}
+  \item certain functions appear often while working with probability
+    distributions used in deep learning models
+  \item one of which is called the \textbf{logistic sigmoid}:
+    \begin{equation}
+      \sigma(x) = \frac{1}{1 + \text{exp}(-x)}
+    \end{equation}
+  \item the logistic sigmoid is commonly used to produce the $\phi$ parameter
+    of a Bernoulli distribution because its range is (0, 1)
+    \begin{tikzpicture}
+      \begin{axis}[
+        legend pos=north west,
+        axis x line=middle,
+        axis y line=middle,
+        x tick label style={/pgf/number format/fixed,
+          /pgf/number format/fixed zerofill,
+          /pgf/number format/precision=1},
+        y tick label style={/pgf/number format/fixed,
+          /pgf/number format/fixed zerofill,
+          /pgf/number format/precision=1},
+        grid = major,
+        width=10cm,
+        height=8cm,
+        grid style={dashed, gray!30},
+        xmin=-1,
+        xmax= 1,
+        ymin= 0,
+        ymax= 1,
+        xlabel=x,
+        ylabel=y,
+        tick align=outside,
+        enlargelimits=false]
+        % plot the stirling-formulae
+        \addplot[domain=-1:1, red, ultra thick,samples=500] {1/(1+exp(-5*x))};
+        \addplot[domain=-1:1, blue, ultra thick,samples=500] {1/(1+exp(-15*x))};
+        \addlegendentry{$f(x)=\frac{1}{1+e^{-5x}}$}
+        \addlegendentry{$g(x)=\frac{1}{1+e^{-15x}}$}
+      \end{axis}
+    \end{tikzpicture}
 \end{itemize}
 
 \end{document} 
