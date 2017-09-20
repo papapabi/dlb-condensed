@@ -64,6 +64,27 @@ Information Theory
 It is proven that Bayesian probabilities are controlled by the same axioms as
 the ones that govern Frequentist probabilities. (Ramsey, 1926)
 
+\textbf{Parametric vs Nonparametric Statistics}
+\begin{itemize}
+  \item Parametric statistics is a branch of statistics which assumes that
+    sample data comes from a population that follows a proability distribution
+    based on a \textbf{fixed set of parameters}
+  \item Non-parametric statistics, conversely, assumes that the parameter set
+    (or a feature set, as it's known in machine learning) is \textbf{not fixed}
+    and can increase/decrease if new relevant information is collected
+  \item a parametric model assumes more about a given population than
+    Non-parametric models do
+  \item when the assumptions are correct, the former will produce more accurate
+    and precise estimates than non-parametric methods; i.e., it has more
+    \textbf{statistical power}
+  \item parametric stats aren't a robust statistical method though, as more is
+    assumed, and when these assumptions aren't correct there are more chances
+    of failing
+  \item note that a non-parametric model does, counterintuitively, contain
+    parameters: the distinction is that the parameters are dictated by the
+    training data, as opposed to the model (if a parametric model is followed)
+\end{itemize}
+
 \section{Random Variables}
 \begin{itemize}
   \item a \textbf{random variable} is a variable that can take on different
@@ -286,6 +307,14 @@ $k$ is finite.
           \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2
                   }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}
     \end{equation}
+  \item controlled by two parameters $\mu \in \mathbb{R}$ and $\sigma \in (0,
+    \infty)$
+  \item the parameter $\mu$ gives the coordinate of the central peak
+  \item the parameter $\mu$ is also the mean of the normal distribution
+    ($\expectation{[x]} = \mu$)
+  \item $\sigma$ = standard deviation, the width of each step
+  \item $\sigma^2$ = variance
+  \item when plotted, the normal distribution exhibits a classic "bell shape"
   \item normal distributions are a sensible choice for many applications, in the
     absence of prior knowledge about what form a distribution over the real
     numbers should take
