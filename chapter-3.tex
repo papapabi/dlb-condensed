@@ -517,4 +517,55 @@ Techncal Details:
     functions of one another, such as transformations
 \end{itemize}
 
+\section{Information Theory}
+\begin{itemize}
+  \item Information theory is a branch of applied mathematics that revolves
+    around \textbf{quantifying how much information is present in a signal}
+  \item tells how to design optimal codes and calculate the expected length of
+    messages sampled from specific probability distributions using various
+    encoding schemes
+  \item quantifying the notion of 'information' and 'data'
+  \item characterizing probability distributions
+  \item quantifying similarity between probability distributions
+\end{itemize}
+
+Formalizing:
+\begin{enumerate}
+  \item Likely events have low information content, and in the extreme case,
+    events that are guaranteed to happen should have no information content
+    whatsoever.
+  \item Less likely events should have higher information content.
+  \item Independent events should contain have information. For instance,
+    finding out that a tossed coin has come up as heads twice should convey
+    twice as much information as finding out that a tossed coin has come up as
+    heads only once.
+\end{enumerate}
+
+\begin{itemize}
+  \item basic intuition: learning an unlikely event has occurred is more
+    informative than learning a likely event has occurred
+  \item to satisfy the formal definition above, we define the
+    \textbf{self-information} of an event x = $x$ to be:
+    \begin{equation}
+      I(x) = -\log P(x)
+    \end{equation}
+    ****$\log$ always means the natural logarithm (base $e$), at least in this
+    book
+  \item $I(x)$ has units in terms of \textbf{nats}
+  \item other texts use units called \textbf{bits} and \textbf{shannons}
+  \item and they use logarithms of base-2
+  \item so, one nat is the amount of information gained by observing an event
+    of probability $\frac{1}{e}$
+  \item the amount of uncertainty in an entire probability distirbution is
+    called the \textbf{Shannon entropy} (also denoted $H(P)$):
+    \begin{equation}
+      H(x) = -\expectation_{x \sim P}[\log P(x)]
+    \end{equation}
+  \item shannon entropy = the expected amount of information in an event that
+    is drawn from that distribution
+  \item when x is continuous, it is then known as the \textbf{differential
+      entropy}
+  \item Kullback-Leibler divergence, cross-entropy
+\end{itemize}
+
 \end{document} 
