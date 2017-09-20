@@ -278,4 +278,25 @@ $k$ is finite.
   \item so many of the distributions are truly close to being normal
     distributions
 \end{itemize}
+\subsection{Exponential and Laplace Distributions}
+\begin{itemize}
+  \item in the context of deep learning, we often want to have a probability
+    distribution with a sharp point at $x = 0$
+  \item to accomplish this, we can use the \textbf{exponential distribution}:
+    \begin{equation}
+      p(x;\lambda) = \lambda\bm{1}_{x \geq 0}\text{exp}(-\lambda x)
+    \end{equation}
+  \item *exp(n) is $e^n$
+  \item it also describes the time between events in a Poisson process (events
+    which occur continuously and independently at a constant average rate
+  \item $\bm{1}_{x \geq 0}$ is the indicator function to assign proability zero
+    to all negative values of x
+  \item to specify a distribution with a sharp peak at arbitrary point $\mu$,
+    we use the \textbf{Laplace distribution}:
+    \begin{equation}
+      \text{Laplace}(x;\mu;\gamma) =
+      \frac{1}{2\gamma}\text{exp}\left(-\frac{|x - \mu|}{\gamma}\right)
+    \end{equation}
+\end{itemize}
+
 \end{document} 
