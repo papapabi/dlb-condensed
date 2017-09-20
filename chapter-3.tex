@@ -435,10 +435,41 @@ $k$ is finite.
         % plot the stirling-formulae
         \addplot[domain=-1:1, red, ultra thick,samples=500] {1/(1+exp(-5*x))};
         \addplot[domain=-1:1, blue, ultra thick,samples=500] {1/(1+exp(-15*x))};
+        \addplot[domain=-1:1, green, ultra thick, samples=500] {1/(1+exp(20*x))};
         \addlegendentry{$f(x)=\frac{1}{1+e^{-5x}}$}
         \addlegendentry{$g(x)=\frac{1}{1+e^{-15x}}$}
+        \addlegendentry{$h(x)=\frac{1}{1+e^{20x}}$}
       \end{axis}
     \end{tikzpicture}
+  \item the sigmoid function \textbf{saturates} when its argument is very
+    positive or very negative
+  \item saturation describes the sharpness of a curve
+  \item another useful function is the \textbf{softplus function}:
+    \begin{equation}
+      \zeta(x) = \log(1 + \exp(x))
+    \end{equation}
+  \item the softplus function can be used for producing the $\beta$ or $\sigma$
+    parameter of a normal distribution because its range is $(0, \infty)$
+  \item it also arises commonly when manipulating expressions involving sigmoids
+  \item the name comes from the fact that it is a smoothed, or "softened"
+    version of the \textbf{positive part function}:
+    \begin{equation}
+      x^+ = \max(0, x)
+    \end{equation}
 \end{itemize}
+
+\subsection{Useful Properties of the Logistic Sigmoid and Softplus functions}
+The following properties are useful enough that you may wish to memorize them:
+\begin{align}
+  \sigma(x) = \frac{\exp(x)}{\exp(x) + \exp(0)} \\
+  \frac{d}{dx} \sigma(x) = \sigma(x)(1 - \sigma(x)) \\
+  1 - \sigma(x) = \sigma(-x) \\
+  \log \sigma(x) = -\zeta(-x) \\
+  \frac{d}{dx} \zeta(x) = \sigma(x) \\
+  \forall x \in (0, 1), \sigma^{-1}(x) = \log \left( \frac{x}{1 - x} \right) \\
+  \forall x > 0, \zeta^{-1}(x) = \log(\exp(x) - 1) \\
+  \zeta(x) = \int_{-\infty}^x \sigma(y)dy \\
+  \zeta(x) - \zeta(-x) = x
+\end{align}
 
 \end{document} 
