@@ -490,4 +490,31 @@ The following properties are useful enough that you may wish to memorize them:
   \item general version was independently discovered by Pierre-Simon Laplace
 \end{itemize}
 
+\section{Technical Details of Continuous Variables}
+A formal, proper understanding of continous random variables and
+probability density functions requires developing probability theory in terms
+of a branch of mathematics called \textbf{measure theory}.
+\subsection{Measure Theory}
+\begin{itemize}
+  \item the use of measure theory is to provide a characterization of the set
+    of sets we can compute the probability without encountering paradoxes
+  \item paradoxes arise from the infinite precision of real numbers
+  \item \textbf{measure zero} - describes a set of points/elements that is
+    negligibly small
+  \item for instance, in $\mathbb{R}^2$, a line or a point has measure zero,
+    while a filled polygon has positive measure
+  \item any union of countably many sets that each have measure zero also has
+    measure zero
+  \item \textbf{almost everywhere} - a property that holds almost everywhere
+    hold thoughout all space except for on a set of measure zero
+  \item some important results in probability hold for all discrete values but
+    hold 'almost everywhere' only for continuous values
+\end{itemize}
+Techncal Details:
+\begin{itemize}
+  \item infinite precision of real numbers (paradoxes with classical set theory)
+  \item relates to handling continuous random variables that are deterministic
+    functions of one another, such as transformations
+\end{itemize}
+
 \end{document} 
