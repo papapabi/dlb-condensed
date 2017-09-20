@@ -1,6 +1,7 @@
 \documentclass[11pt, twocolumn]{report}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage[margin=0.75in]{geometry}
 \def\expectation{\mathbb{E}}
 
@@ -245,5 +246,15 @@ lmao just look up conditional independence it's too wordy to type
 \end{itemize}
 
 \section{Common Probability Distirbutions}
-
+\subsection{Bernoulli Distribution}
+A distribution over a single binary random variable. It is controlled by a
+single parameter $\phi \in [0, 1]$, which gives the probability of the random
+variable being equal to 1. It has the following properties:
+\begin{align}
+  P(\text{x} = 1) &= \phi\\
+  P(\text{x} = 0) &= 1 - \phi\\
+  P(\text{x} = x) &= \phi^x(1 - \phi)^{1 - x}\\
+  \expectation{}_x[\text{x}] &= \phi\\
+  \text{Var}_x(\text{x}) &= \phi(1 - \phi)
+\end{align}
 \end{document} 
