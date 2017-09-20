@@ -298,5 +298,32 @@ $k$ is finite.
       \frac{1}{2\gamma}\text{exp}\left(-\frac{|x - \mu|}{\gamma}\right)
     \end{equation}
 \end{itemize}
-
+\subsection{The Dirac Distribution and Empirical Distribution}
+\begin{itemize}
+  \item a PDF with the \textbf{Dirac delta function} ($\delta(x)$) specifies
+    that all the mass in a probability distribution clusters around a single
+    point
+  \item
+    \begin{equation}
+      p(x) = \delta(x - \mu)
+    \end{equation}
+  \item it is defined such that it is zero-valued everywhere except zero, yet
+    integrates to 1
+  \item the Dirac delta function is not a funtion; rather, a different kind of
+    mathematical object known as a \textbf{generalized function} that is
+    defined in terms of its properties when integrated
+  \item by defining $p(x)$ to be $\delta$ shifted by $-\mu$ we obtain an
+    infinitely narrow and infinitely high peak of probability mass where $x =
+    \mu$
+  \item a common use of the Dirac delta function is as a component of an
+    \textbf{empicial distribution}:
+    \begin{equation}
+      \hat{p(\bm{x})} = \frac{1}{m} \sum_{i=1}^m \delta (\bm{x} - \bm{x}^{(i)})
+    \end{equation}
+    which puts probabilty mass $\frac{1}{m}$ on each of the $m$ points
+    $\bm{x}^{(1)},...,\bm{x}^{(m)}$, forming a given data set2 or collection of
+    samples
+  \item the Dirac delta function is only necessary to define the empirical
+    distribution over continuous variables
+\end{itemize}
 \end{document} 
