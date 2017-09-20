@@ -246,6 +246,7 @@ lmao just look up conditional independence it's too wordy to type
 \end{itemize}
 
 \section{Common Probability Distirbutions}
+
 \subsection{Bernoulli Distribution}
 A distribution over a single binary random variable. It is controlled by a
 single parameter $\phi \in [0, 1]$, which gives the probability of the random
@@ -257,9 +258,25 @@ variable being equal to 1. It has the following properties:
   \expectation{}_x[\text{x}] &= \phi\\
   \text{Var}_x(\text{x}) &= \phi(1 - \phi)
 \end{align}
+
 \subsection{Multinoulli Distribution}
 A distribution over a single discrete variable with $k$ different states, where
 $k$ is finite.
+\begin{itemize}
+  \item often used to refer to distributions over categories of objects, so we
+    don't have to assume that the states have numerical values
+  \item for this reason, we don't usually need to compute for the expectation
+    and variance of multinoulli-distributed random variables
+  \item parameterized by a vector $\bm{p} \in [0, 1]^{k - 1}$ where $p_i$ gives
+    the probability of the $i$-th state.
+  \item the final, $k$-th state's probability is given by $1 -
+    \bm{1}^\intercal\bm{p}$
+  \item note that we must constrain $1 - \bm{1}^\intercal\bm{p} \leq 1$
+  \item both of the aforementioned distributions are sufficient to describe any
+    distribution over their domain
+  \item they model discrete variables for which it is feasible to enumerate all
+    the states
+\end{itemize}
 \subsection{Gaussian/Normal Distribution}
 \begin{itemize}
   \item the most commonly-used distribution over real numbers is the
@@ -278,6 +295,7 @@ $k$ is finite.
   \item so many of the distributions are truly close to being normal
     distributions
 \end{itemize}
+
 \subsection{Exponential and Laplace Distributions}
 \begin{itemize}
   \item in the context of deep learning, we often want to have a probability
@@ -298,6 +316,7 @@ $k$ is finite.
       \frac{1}{2\gamma}\text{exp}\left(-\frac{|x - \mu|}{\gamma}\right)
     \end{equation}
 \end{itemize}
+
 \subsection{The Dirac Distribution and Empirical Distribution}
 \begin{itemize}
   \item a PDF with the \textbf{Dirac delta function} ($\delta(x)$) specifies
@@ -326,4 +345,20 @@ $k$ is finite.
   \item the Dirac delta function is only necessary to define the empirical
     distribution over continuous variables
 \end{itemize}
+
+\subsection{Mixtures of Distributions}
+\begin{itemize}
+  \item it is common to define probability distributions by combining simpler
+    probability distributions
+  \item one way is to construct a \textbf{mixture distribution}
+  \item on each trial, the choice of which component distribution should
+    generate the sample is determined by sampling a componet identity from a
+    multinoulli distribution:
+    \begin{equation}
+      P(\text{x}) = \sum_i P(\text{c} = i)P(\text{x} | \text{c} = i),
+    \end{equation}
+    where $P(\text{c})$ is the multinoulli distribution over component
+    identities
+\end{itemize}
+
 \end{document} 
