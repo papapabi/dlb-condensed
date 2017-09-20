@@ -257,4 +257,25 @@ variable being equal to 1. It has the following properties:
   \expectation{}_x[\text{x}] &= \phi\\
   \text{Var}_x(\text{x}) &= \phi(1 - \phi)
 \end{align}
+\subsection{Multinoulli Distribution}
+A distribution over a single discrete variable with $k$ different states, where
+$k$ is finite.
+\subsection{Gaussian/Normal Distribution}
+\begin{itemize}
+  \item the most commonly-used distribution over real numbers is the
+    \textbf{normal distribution}:
+    \begin{equation}
+      P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 }
+          \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2
+                  }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}
+    \end{equation}
+  \item normal distributions are a sensible choice for many applications, in the
+    absence of prior knowledge about what form a distribution over the real
+    numbers should take
+  \item the \textbf{central limit theorem} shows that the sum of many
+    independent random variables is approximately normally distributed (even if
+    the original variables themseleves are not normally distributed)
+  \item so many of the distributions are truly close to being normal
+    distributions
+\end{itemize}
 \end{document} 
