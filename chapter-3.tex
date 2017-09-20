@@ -568,4 +568,23 @@ Formalizing:
   \item Kullback-Leibler divergence, cross-entropy
 \end{itemize}
 
+\section{Structured Probabalistic Models}
+\begin{itemize}
+  \item ML algorithms often involve probability distributions over a very large
+    number of random variables
+  \item using a single function to describe the entire joint pd can be very
+    inefficient (statistically and computationally speaking)
+  \item \textbf{structured probabilistic/graphical model} - representing
+    probability distributions with a graph (in terms of graph theory)
+  \item two main kinds: directed and undirected
+  \item directed models use graphs with directed edges
+  \item (see page 76 of the deep learning book for a more grounded intuition)
+  \item likewise, undirected models use graphs with undirected edges
+  \item keep in mind that these representations aren't mutually exclusive
+    families of probability distributions -- they are merely a language for
+    describing probability distributions
+  \item any probability distribution can be described in both ways
+  \item final reiteration of the same fact: being directed or undirected isn't
+    an inherent property of a probability distribution
+\end{itemize}
 \end{document} 
