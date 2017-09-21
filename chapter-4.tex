@@ -1,4 +1,10 @@
 \documentclass[11pt, twocolumn]{report}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\def\realnumbers{\mathbb{R}}
+
 \begin{document}
 \setcounter{chapter}{3}
 
@@ -22,12 +28,13 @@ some approximation error just by representing the number in the computer. In
 most cases this is rounding error.  Rounding error can cause algorithms that
 work in theory to fail in practice if they are not designed to minimize the
 accumulation of rounding error.
+
 \textbf{Underflow}
-\begin{enumerate}
+\begin{itemize}
   \item underflow occurs when numbers near zero are rounded to zero
   \item this is a problem because we want to avoid dividing by zero, among
     other things
-\end{enumerate}
+\end{itemize}
 
 \textbf{Overflow}
 \begin{itemize}
@@ -40,5 +47,24 @@ Developers can simply rely on low-level libraries that provide stable
 implementations.  Theano is an example of a software package that automatically
 detects and stabilizes many common numerically unstable expressions that arise
 in the context of deep learning.
+
+\section{Poor Conditioning}
+\begin{itemize}
+  \item conditining refers to how rapidly a function changes with respect to
+    small changes in its inputs
+  \item \textbf{rounding errors in the inputs can cause large changes in the
+      output}
+  \item Consider the function $f(\bm{x}) = \bm{A}^{-1}\bm{x}$. When $\bm{A} \in
+    \realnumbers^{n \times n}$ has an eigenvalue decomposition, its
+    \textbf{condition number} is:
+    \begin{equation}
+      \max_{i, j} \left|\frac{\lambda_i}{\lambda_j}\right|
+    \end{equation}
+    which is the ratio of the largest and smallest eigenvalue
+    \item when the condition number is large, matrix inversion is particularly
+      sensitive to error in the input
+    \item note that this sensitivity is an intrinsic property of the matrix
+      itself, not the result of rounding error during matrix inversion
+\end{itemize}
 
 \end{document}
