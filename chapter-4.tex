@@ -118,4 +118,23 @@ in the context of deep learning.
     output must be scalar -- singular)
 \end{itemize}
 
+\subsection{Gradient Descent - Multiple Inputs}
+\begin{itemize}
+  \item for functions with multiple inputs we use \textbf{partial derivatives}
+  \item the partial derivative $\frac{\partial}{\partial x_i} f(\bm{x})$
+    measure how $f$ changes as only the variable $x_i$ inreases at point
+    $\bm{x}$
+  \item the \textbf{gradient} of $f$ is then the vector containing all the
+    partial derivatives, denoted $\nabla_{\bm{x}} f(\bm{x})$
+  \item element $i$ of the gradient is the partal derivative of $f$ with
+    respect to $x_i$
+  \item *in multiple dimensions, critical points are points where every element
+    of the gradient is equal to zero
+  \item there are many methods in this area, most notably, \textbf{steepest
+      descent}, \textbf{line search}
+  \item gradient descent is limited to optimization in continuous
+    spaces, but the generally concept of repeatedly making a small move toward
+    better configs can be generalized to discrete spaces
+\end{itemize}
+
 \end{document}
