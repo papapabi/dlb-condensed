@@ -1,5 +1,44 @@
 \documentclass[11pt, twocolumn]{report}
 \begin{document}
 \setcounter{chapter}{3}
+
 \chapter{Numerical Computation}
+Machine learning algorithms typically require a high amount of numerical
+computation. This typically refers to algorithms that update estimates of the
+solution via an iterative process, rather than analytically deriving a formula
+toprovide a symbolic expression for the correct (and exact) solution. Common
+operations include \textbf{optimization} (finding a value of an argument that
+minimizes or maximizes a function) and \textbf{solving systems of linear
+  equations}. The mere evaluation of a mathematical function on a computer can
+be difficult when the function's domain involves real numbers, which cannot be
+represented precisely using a finite amount of memory.
+
+\section{Overflow and Underflow}
+The fundamental difficulty in performing continuous math operations on a
+digital computer is that we need to represent infinitely many digits of a real
+number with a finite number of bit patterns, depending on what is available on
+a particular machine. This means that for almost all real numbers, we incur
+some approximation error just by representing the number in the computer. In
+most cases this is rounding error.  Rounding error can cause algorithms that
+work in theory to fail in practice if they are not designed to minimize the
+accumulation of rounding error.
+\textbf{Underflow}
+\begin{enumerate}
+  \item underflow occurs when numbers near zero are rounded to zero
+  \item this is a problem because we want to avoid dividing by zero, among
+    other things
+\end{enumerate}
+
+\textbf{Overflow}
+\begin{itemize}
+  \item overflow occurs when numbers with a large magnitude are approximated as
+    $\infty$ or $-\infty$
+  \item further arithmetic will usually change these values to NaN values
+\end{itemize}
+
+Developers can simply rely on low-level libraries that provide stable
+implementations.  Theano is an example of a software package that automatically
+detects and stabilizes many common numerically unstable expressions that arise
+in the context of deep learning.
+
 \end{document}
