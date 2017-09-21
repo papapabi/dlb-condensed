@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{bm}
 \def\realnumbers{\mathbb{R}}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 \begin{document}
 \setcounter{chapter}{3}
@@ -61,10 +62,60 @@ in the context of deep learning.
       \max_{i, j} \left|\frac{\lambda_i}{\lambda_j}\right|
     \end{equation}
     which is the ratio of the largest and smallest eigenvalue
-    \item when the condition number is large, matrix inversion is particularly
-      sensitive to error in the input
-    \item note that this sensitivity is an intrinsic property of the matrix
-      itself, not the result of rounding error during matrix inversion
+  \item when the condition number is large, matrix inversion is particularly
+    sensitive to error in the input
+  \item note that this sensitivity is an intrinsic property of the matrix
+    itself, not the result of rounding error during matrix inversion
+\end{itemize}
+
+\section{Gradient-Based Optimization}
+\begin{itemize}
+  \item most deep learning algorithms involve optimization of some sort
+  \item optimization refers to the task of either minimizing or maximizing
+    some function $f(\bm{x})$ by altering $\bm{x}$
+  \item most applications focus on minimizing $f$ though
+  \item the function we want to minimize is called the \textbf{objective
+      function/criterion/cost function/loss function/error function}
+  \item note that some ML publications assign special meaning to each of said
+    terms
+  \item we typically denote the value that minimizes/maximizes a function with
+    a superscript $*$, for instance, $\bm{x}^* = \argmin f(\bm{x})$
+  \item the \textbf{derivative} is, in simplest terms, the slope of $f$
+  \item the \textbf{derivative} specifies how to scale a small change in the
+    input to obtain the corresponding change in the output: $f(x + \epsilon)
+    \approx f(x) + \epsilon f'(x)$
+  \item when $f'(x) = 0$, we are at a \textbf{critial point}
+  \item local minimum: a point where $f(x)$ is lower compared to all
+    neighboring points, so it is no longer possible to decrease $f(x)$ by taking
+    infinitesimal steps
+  \item absolute minimum: the absolute lowest value of $f(x)$
+  \item local maximum, absolute maximum
+  \item critical points that are neither maxima nor minima are called
+    \textbf{saddle points}, which have neighbors that are both higher and lower
+    than the point itself
+\end{itemize}
+
+\subsection{Gradient Descent}
+\begin{itemize}
+  \item a first-order iterative optimization algorithm for finding the minimum
+    of a function
+  \item "\textit{reduce $f(x)$ by moving in small steps with the opposite sign
+      of the derivative}"
+  \item consicely, $f(x - \epsilon \text{sign}(f'(x)))$
+\end{itemize}
+
+\textbf{Why the heck must we know this?}
+\begin{itemize}
+  \item in the context of deep learning, we optimize functions that may have
+    many local minima that aren't optimal and many saddle points surrounded by
+    very flat regions
+  \item this makes optimization difficult
+  \item not to mention when the input is multidimensional
+  \item we therefore usually settl for a value of $f$ that is very low but may
+    or may not be necessarily a minima in the formal sense
+  \item we often minimize functions that have multiple inputs $f :
+    \realnumbers^n \to \realnumbers$ (for the minimization to make sense the
+    output must be scalar -- singular)
 \end{itemize}
 
 \end{document}
