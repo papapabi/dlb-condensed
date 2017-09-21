@@ -137,4 +137,39 @@ in the context of deep learning.
     better configs can be generalized to discrete spaces
 \end{itemize}
 
+\subsection{Beyond the Gradient: Jacobian and Hessian Matrices}
+\subsubsection{Jacobian matrix}
+\begin{itemize}
+  \item the matrix containing all partial derivatives of a function $f$ is
+    called the \textbf{Jacobian matrix}
+  \item specifically: if we have a function $\bm{f} : \realnumbers^m \to
+    \realnumbers^n$, then the Jacobian matrix $\bm{J} \in \realnumbers^{n
+      \times m}$ of $\bm{f}$ is defined such that:
+    \begin{equation}
+      J_{i, j} = \frac{\partial}{\partial x_j} f(\bm{x})_i
+    \end{equation}
+\end{itemize}
+
+\subsubsection{Hessian matrix}
+\begin{itemize}
+  \item the \textbf{second derivative} is the derivative of the derivative
+  \item in the single dimension, we can denote it by $f''(x)$
+  \item otherwise, $\frac{\partial^2}{\partial x_i \partial x_j}$
+  \item the derivative with respect to $x_i$ of the derivative of $f$ with
+    respect to $x_j$
+  \item the latest derivative is leftmost on the denominator
+  \item we can think of it as the measure of \textbf{curvature}
+  \item the matrix containing all the second derivatives of a function $f$ is
+    called the \textbf{Hessian matrix} $\bm{H}(f)(\bm{x})$:   
+    \begin{equation}
+      \bm{H}(f)(\bm{x})_{i, j} = \frac{\partial^2}{\partial x_i \partial x_j}
+      f(\bm{x})
+    \end{equation}
+  \item the Hessian is the Jacobian of the gradient
+  \item the Hessian matrix is symmetric at $H_{i, j} = H_{j_i}$ since partial
+    differentiation is commutative
+  \item most functions we encounter in deep learning have a symmetric Hessian
+    almost everywhere
+\end{itemize}
+
 \end{document}
