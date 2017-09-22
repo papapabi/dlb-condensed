@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{bm}
+\def\realnumbers{\mathbb{R}}
 
 \begin{document}
 \setcounter{chapter}{4}
@@ -30,5 +31,61 @@ Overview:
 \end{itemize}
 
 \section{Learning Algorithms}
+A machine learning algorithm is an algorithm that is able to learn from data.
+But what do we mean by \textit{learning}? Mitchell (1997) provides a succinct
+definition:
+
+"A computer program is said to learn from experience $E$ with
+respect to some class of tasks $T$ and performance measure $P$, if its
+performance at tasks in $T$ (as measured by $P$) improves with experience $E$."
+
+\subsection{The Task, $T$}
+\begin{itemize}
+  \item the process of learning itself is \textbf{not} the task
+  \item learning is the means of attaining the ability to perform the task
+  \item if we want a robot to walk, then walking is the task
+  \item machine learning tasks are usually describe in terms of how the machine
+    learning system should process an \textbf{example}
+  \item an example is a collection of \textbf{features} that have been
+    quantitatively measured from some object or event that we want the machine
+    learning to process
+  \item we typically represent an example as a vector $\bm{x} \in
+    \realnumbers^n$ where each entry $x_i$ of the vector is another feature
+  \item the features of an image are usually the value of the pixels in the
+    image
+  \item there are many kinds of tasks that can be solved with machine
+    learning
+\end{itemize}
+
+\subsubsection{Examples of tasks}
+
+Classification
+\begin{itemize}
+  \item specify which of $k$ categories some input belongs to
+  \item we ask the system to produce some function $f : \realnumbers^n \to
+    \{1,...,k\}$
+  \item when $y = f(\bm{x})$, assigns an input described by vector $\bm{x}$ to
+    a category identified by numeric code $y$ to a category identified by
+    numeric code $y$
+  \item an example is an input image, and the output is a numeric code
+    identifying the object in the image
+  \item object recognition is the same basic tech as facial recognition
+\end{itemize}
+
+Regression
+\begin{itemize}
+  \item predict a numerical value given some input
+  \item $f : \realnumbers^n \to \realnumbers$
+  \item similar to classification save for the output (categorical vs numeric)
+  \item an example is the prediction of future prices of produce
+  \item these kinds of predictions are used for algorithmic trading
+\end{itemize}
+
+Transcription
+\begin{itemize}
+  \item 
+\end{itemize}
+
 
 \end{document}
+
