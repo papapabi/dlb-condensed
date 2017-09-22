@@ -1,6 +1,7 @@
 \documentclass[11pt, twocolumn]{report}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{amssymb}
+\usepackage[]{algorithm2e}
 \usepackage{amsmath}
 \usepackage{bm}
 \def\realnumbers{\mathbb{R}}
@@ -222,4 +223,73 @@ have a small change in the output.
   \item specifics can be found at pg. 91 onwards
 \end{itemize}
 
+\section{Ex: Linear Least Squares}
+Find the value of $\bm{x}$ that minimizes:
+\begin{equation}
+  f(\bm{x}) = \frac{1}{2} \| \bm{Ax} - \bm{b} \|^2
+\end{equation}
+Specialized linear algebra algorithms can solve this problem efficiently;
+however, we can also explore how to solve it using gradient-based optimization
+as a simple example of how these techniques work.
+
+First, we need to obtain the gradient:
+\begin{equation}
+  \nabla_{\bm{x}} f(\bm{x}) = \bm{A}^\intercal (\bm{Ax} - \bm{b}) 
+  = \bm{A}^\intercal\bm{Ax} - \bm{A}^\intercal\bm{b}
+\end{equation}
+
+We can then follow this gradient downhill, taking small steps at a time. See
+the following algorithm for details:
+\begin{algorithm}
+  \KwData{the aforementioned function $f$, an arbitrary point $\bm{x}$, small
+    positive numbers $\epsilon$, $\delta$ for step size and tolerance
+    respectively}
+  \KwResult{the (hopefully) minimized value}
+  \While{$\| \bm{A}^\intercal\bm{Ax} - \bm{A}^\intercal\bm{b} \|_2 \geq \delta$} {
+    $\bm{x} \leftarrow \bm{x} - \epsilon(\bm{A}^\intercal\bm{Ax} - \bm{A}^\intercal\bm{b})$
+  }
+  \caption{An algorithm to minimize the function $f$ with respect to $\bm{x}$
+    using gradient descent}
+\end{algorithm}
+
+Now suppose we want to minimize the same function, but subject to the
+constraint $\bm{x}^\intercal\bm{x} \leq 1$. To do so, we introduce the
+Lagrangian:
+\begin{equation}
+  L(\bm{x},\lambda) = f(\bm{x}) + \lambda(\bm{x}^\intercal\bm{x} - 1).
+\end{equation}
+We can now solve the problem
+\begin{equation}
+  \min_x \max_{\lambda, \lambda \geq 0} L(\bm{x}, \lambda).
+\end{equation}
+
+The smallest-norm solution to the unconstrained least-squares problem may be
+found using the Moore-Penrose pseudoinverse: $\bm{x} = \bm{A}^+\bm{b}$. If this
+point is feasible, then it is the solution to the constrained problem.
+Otherwise, we must find a solution where the constraint is active. By
+differentiating the Lagrangian with respect to $\bm{x}$, we obtain:
+\begin{equation}
+  \bm{A}^\intercal\bm{Ax} - \bm{A}^\intercal\bm{b} + 2\lambda\bm{x} = 0.
+\end{equation}
+
+This tells us that the solution will take the form
+\begin{equation}
+  \bm{x} = (\bm{A}^\intercal\bm{A} + 2\lambda\bm{I})^{-1}\bm{A}^\intercal\bm{b}.
+\end{equation}
+
+The magnitude of $\lambda$ may be chosen such that the result obeys the
+constraint. We can find this value by performing gradient ascent on $\lambda$.
+To do so, observe:
+\begin{equation}
+  \frac{\partial}{\partial\lambda} L(\bm{x},\lambda) = \bm{x}^\intercal\bm{x} -
+  1.
+\end{equation}
+
+When the norm exceeds 1, this derivative is positive, so to follow the
+derivative uphill and increase the Lagrangian with respect to $\lambda$, we
+increase $\lambda$. Because the coefficient on the $\bm{x}^\intercal\bm{x}$
+penalty has increased, solving the linear equation for $\bm{x}$ will now yield
+a solution with a smaller norm. The process of solving the linear equation and
+adjusting $\lambda$ continues until $\bm{x}$ has the correct norm and the
+derivative on $\lambda$ is 0.
 \end{document}
