@@ -126,6 +126,7 @@ in the context of deep learning.
     $\bm{x}$
   \item the \textbf{gradient} of $f$ is then the vector containing all the
     partial derivatives, denoted $\nabla_{\bm{x}} f(\bm{x})$
+  \item the gradient is then the multi-variable generalization of the derivative
   \item element $i$ of the gradient is the partal derivative of $f$ with
     respect to $x_i$
   \item *in multiple dimensions, critical points are points where every element
@@ -157,6 +158,7 @@ in the context of deep learning.
   \item otherwise, $\frac{\partial^2}{\partial x_i \partial x_j}$
   \item the derivative with respect to $x_i$ of the derivative of $f$ with
     respect to $x_j$
+  \item \textbf{second derivative test}
   \item the latest derivative is leftmost on the denominator
   \item we can think of it as the measure of \textbf{curvature}
   \item the matrix containing all the second derivatives of a function $f$ is
@@ -170,6 +172,42 @@ in the context of deep learning.
     differentiation is commutative
   \item most functions we encounter in deep learning have a symmetric Hessian
     almost everywhere
+  \item further readings can be had in pg. 85-89
 \end{itemize}
+
+\subsubsection{Newton's method}
+\begin{itemize}
+  \item full name: Newton-Raphson method
+  \item a method for finding succssively better approximations to the roots
+    (solutions) of a real-valued function
+  \item i.e., $x^* : f(x) = 0$
+  \item Newton's method is based on using a second-order Taylor series
+    expansion to approximate $f(\bm{x})$ near some point $\bm{x}^{(0)}$:
+    \begin{equation}
+      \bm{x}^* = \bm{x}^{(0)} -
+      \bm{H}(f)(\bm{x}^{(0)})^{-1}\nabla_{\bm{x}}f(\bm{x}^{(0)})
+    \end{equation}
+  \item \textbf{it might halt at a saddle point though}
+  \item appropriate when the nearby critical point is minimum (all the
+    eigenvalues of the Hessian are positive)
+\end{itemize}
+
+Optimization algorithms that use only the gradient are called
+\textbf{first-order optimization algorithms}, while those that also use the
+Hessian matrix, such as Netwon's method, are called \textbf{second-order
+  optimization algorithms}.
+
+In the context of deep learning, we may find some guarantees by restricting
+ourselves to functions that are either \textbf{Lipschitz continuous} or have
+Lipschitz continuous derivatives. A Lipschitz continuous function is a function
+$f$ whose rate of change is bounded by a Lipschitz constant $\mathcal{L}$:
+\begin{equation}
+  \forall \bm{x}, \forall \bm{y},
+  | f(\bm{x}) - f(\bm{y}) | \leq \mathcal{L} \| \bm{x} - \bm{y} \|_2
+\end{equation}
+
+The above is useful because it enables us to quantify our assumption that a
+small change in the input made by an algorithm such as gradient descent will
+have a small change in the output.
 
 \end{document}
