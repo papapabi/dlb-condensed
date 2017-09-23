@@ -290,5 +290,58 @@ Example: The Iris Dataset
   \item there is no rigid taxonomy for datasets and experiences, so one can be
     creative with how they are represented so long as it works well
 \end{itemize}
+
+\subsection{Example: Linear Regression}
+\begin{itemize}
+  \item an ML algorithm is an algorithm that is capable of improving a
+    computer's performance at some task via experience
+  \item to make this more concrete, let us examine \textbf{linear regression}
+  \item as it name implies, it is a regression task
+  \item to goal is to build a system thas has a function $f : \bm{x} \in
+    \realnumbers^n \to y \in \realnumbers$
+  \item the output of the linear regression is a linear function of the input
+  \item we define the output to be:
+    \begin{equation}
+      \hat{y} = \bm{w}^\intercal\bm{x},
+    \end{equation}
+    where $\hat{y}$ is the predicted value, and $\bm{w} \in \realnumbers^n$ is
+    a vector of \textbf{parameters}
+  \item parameters are values that control the behavior of the system
+  \item $\bm{w}$ is the coefficient matrix, and we can think of it as a set of
+    \textbf{weights} that determine how much each feature affects the final
+    prediction
+  \item if a feature's weight has a large magnitude, that means it has a large
+    effect on the prediction
+  \item thus we have a definition for task $T$: predict $y$ from $\bm{x}$ by
+    outputting $\hat{y} = \bm{w}^\intercal\bm{x}$
+  \item one way of measuring linear regression is to computer the \textbf{mean
+      squared error} of the model on the test set:
+    \begin{equation}
+      \text{MSE}_{\text{test}} = \frac{1}{m} \sum_i ( \hat{\bm{y}}^{(test)} -
+      \bm{y}^{(test)})_i^2
+    \end{equation}
+  \item this error measure decreases to zero when $\hat{\bm{y}}^{(test)} =
+    \bm{y}^{(test)}$
+  \item so to minimize MSE, we can simply solve for where its gradient is
+    $\bm{0}$:
+    \begin{equation}
+      \label{parameter_solution}
+      \Rightarrow \bm{w} = \left(\bm{X}^{(train)\intercal}
+        \bm{X}^{(train)}\right)^{-1} \bm{X}^{(train)} \bm{y}^{(train)}
+    \end{equation}
+  \item evaluation equation \ref{parameter_solution} constitutes a simple
+    learning algorithm
+  \item it is worth noting that linear regression has another parameter $b$
+    (the constant) such that the mapping from features to predictions is now an
+    \textbf{affine function}:
+    \begin{equation}
+      \hat{y} = \bm{w}^\intercal\bm{x} + b
+    \end{equation}
+  \item *an affine function is one that translates the whole graph by
+    coordinate $a$, a linear transformation followed by translation
+  \item the intercept term $b$ is often called the \textbf{bias} parameter
+  \item this terminology comes from when the output tends to go to $b$ in the
+    absence of any input, different from a \textbf{statistical bias}
+\end{itemize}
 \end{document}
 
