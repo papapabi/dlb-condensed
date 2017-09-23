@@ -59,7 +59,7 @@ performance at tasks in $T$ (as measured by $P$) improves with experience $E$."
 
 \subsubsection{Examples of tasks}
 
-Classification
+\underline{Classification}
 \begin{itemize}
   \item specify which of $k$ categories some input belongs to
   \item we ask the system to produce some function $f : \realnumbers^n \to
@@ -72,7 +72,7 @@ Classification
   \item object recognition is the same basic tech as facial recognition
 \end{itemize}
 
-Regression
+\underline{Regression}
 \begin{itemize}
   \item predict a numerical value given some input
   \item $f : \realnumbers^n \to \realnumbers$
@@ -81,11 +81,93 @@ Regression
   \item these kinds of predictions are used for algorithmic trading
 \end{itemize}
 
-Transcription
+\underline{Transcription}
 \begin{itemize}
-  \item 
+  \item observe a relatively unstructured representaion of some kind of data
+    and transcribe the information into discrete textual form
+  \item optical character recognition
+  \item image of text (.jpeg, .gif) to strings (e.g., in ASCII or Unicode)
+  \item Google Street View uses deep learning to process address numbers in
+    this way
+  \item speech recognition, audio waveform to a sequence of characters 
 \end{itemize}
 
+\underline{Machine Translation}
+\begin{itemize}
+  \item input: sequence of symbols in some language
+  \item output: sequence of symbols in another language
+  \item commonly applied to natural languages, such as translating from English
+    to French
+\end{itemize}
 
+\underline{Structured Output}
+\begin{itemize}
+  \item refers to the tasks where the output is a vector (or any data structure
+    containing multiple values) with important relationships between the
+    different elements
+  \item one example is parsing -- mapping a natural language sentence into a
+    tree that describes its grammatical structure by tagging its nodes as beig
+    verbs, nouns, adverbs, and so on
+  \item image captioning
+\end{itemize}
+
+\underline{Anomaly Detection}
+\begin{itemize}
+  \item sifts through a set of events or objects and flags some of them as
+    being unusual or atypical
+  \item an example is credit card fraud detection
+  \item by modeling one's purchasing habits, a credit card company can detect
+    misuse of your cards
+  \item the thief's purchases will often come from a different probability
+    distribution over purchase types than your own
+\end{itemize}
+
+\underline{Synthesis and Sampling}
+\begin{itemize}
+  \item generate new examples that are similar to those in the training data
+  \item useful for media applications where generating large volumes of content
+    by hand would be expensive, boring, or require too much time
+  \item examples include texture generation for video games
+  \item speech synthesis - written sentence $\to$ audio waveform containing the
+    spoken version of said sentence
+  \item we explicitly desire a large amount of variation in the output in order
+    for it to seem more natural
+\end{itemize}
+
+\underline{Imputation of missing values}
+\begin{itemize}
+  \item the algorithm is given a new example $\bm{x} \in \realnumbers^n$, but
+    with some entries $x_i$ of $\bm{x}$ missing
+  \item the algorithm then must provide a prediction of the values of the
+    missing entries\\\\\\
+\end{itemize} 
+
+\underline{Denoising}
+\begin{itemize}
+  \item the algorithm is given a \textit{corrupted example} $\widetilde{\bm{x}}
+    \in \realnumbers^n$ obtained by an unknown corruption process from a
+    \textit{clean example} $\bm{x} \in \realnumbers^n$
+  \item the learner must predict the clean example from its corrupted version 
+  \item more generally, predict the probability distribution $p(\bm{x} |
+    \widetilde{\bm{x}})$
+\end{itemize}
+
+\underline{Density estimation}
+\begin{itemize}
+  \item the algorithm is asked to learn a function $p_{model} : \realnumbers^n
+    \to \realnumbers$, where $p_{model}(\bm{x})$ can be interpreted as a pdf or
+    pmf depending on the nature of $\bm{x}$ (continuous vs discrete)
+  \item basically allows us to capture what distribution the examples were
+    drawn from
+  \item the algorithm needs to learn the structure of the training data
+  \item after getting the pdf/pmf, a lot of othe tasks can be solved as well
+    (like value imputation)
+  \item in practice though, density estimation does not always enable us to
+    solve all related tasks, because in many cases operations on $p(\bm{x})$
+    are computationally intractable
+\end{itemize}
+
+There are many other types of tasks that are not mentioned, this is just to
+give you a general idea of what is possible with machine learning.
 \end{document}
 
