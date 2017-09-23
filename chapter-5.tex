@@ -194,5 +194,101 @@ give you a general idea of what is possible with machine learning.
     system
   \item in other cases measuring it is impractical even
 \end{itemize}
+
+\subsection{The Experience, $E$}
+Machine learning algorithms can be broadly categorized as \textbf{unsupervised}
+or \textbf{supervised} by what kind of experience they are allowed to have
+during the learning process.
+
+Most of what learning algorithms in this book can be understood as being
+allowed to experience an entire \textbf{dataset}. A dataset is a collection of
+many examples. Sometimes examples are known as data points.
+
+Example: The Iris Dataset
+\begin{itemize}
+  \item a collection of measurements of different parts of 150 iris plants
+  \item each individual plant = one example
+  \item there are features within each example: things like sepal length, sepal
+    width, petal length, and petal height
+  \item the dataset also records which species each plant belongs to (there are
+    three species)
+\end{itemize}
+
+\subsubsection{Unsupervised learning algorithms}
+\begin{itemize}
+  \item they experience a dataset containing many features
+  \item then they themselves learn useful properties of the structure of this
+    dataset a la inference
+  \item we usually want to learn the entire probability distribution that
+    generated the dataset
+\end{itemize}
+
+\subsubsection{Supervised learning algorithms}
+\begin{itemize}
+  \item same as unsupervised but each example is also associated with a
+    \textbf{label}
+  \item the Iris dataset is annotated with the species of each iris plant
+  \item a supervised learning algorithm can study the Iris dataset and learn to
+    classify iris plants into three different species based on their
+    measurements and whatnot
+\end{itemize}
+
+\subsubsecton{Supervised vs Unsupervised}
+\begin{itemize}
+  \item roughly speaking, unsupervised learning involves observing several
+    examples of a random vector $\bm{x}$ and attempting to learn the probability
+    distribution $p(\bm{x})$
+  \item supervised learning involves observing several examples of a random
+    vector $\bm{x}$ and an associated value or vector $\bm{y}$, then learning
+    to predict $\bm{y}$ from $\bm{x}$, usually by estimating $p(\bm{y} |
+    \bm{x})$
+  \item the term 'supervised' comes from an instructor (you) 'showing' (giving
+    examples $\bm{y}$) the student (the machine learning system) what to do
+  \item in unsupervised learning you don't show the system what to do, it'll
+    automagically try to infer stuff based from the dataset
+  \item supervised learning is tedious because you have to individually label
+    each example, which might be costly
+  \item they aren't formally defined terms though
+  \item traditionaly, people refer to \textbf{regression, classification, and
+      structured output problems} as supervised learning
+  \item \textbf{density estimation} in support of other tasks is unsupervised
+    learning
+\end{itemize}
+
+\subsubsection{Other variants of learning}
+\begin{itemize}
+  \item there are other variants such as
+  \item semi-supervised learning - some are labeled, some are not
+  \item multi-instance learning - the entire collection is labeled or not
+    containg an example of a clss, but the individual members aren't labeled
+  \item reinforcement leaning - there is a feedback loop between the learning
+    system and its experiences; you reward the system for producing the correct
+    output and punish it for the wrong output
+\end{itemize}
+
+\subsubsecton{The Dataset}
+\begin{itemize}
+  \item datasets are a collection of examples -> examples are a collection of
+    features
+  \item one common way to describe a dataset is with a \textbf{design matrix}
+  \item a design matrix is a matrix containing a different example each row
+  \item for instance, the Iris dataset contains 150 examples with 4 features
+    for each example
+  \item so we can represent these information as a design matrix $\bm{X} \in
+    \realnumbers^{150 \times 4}$, where $X_{i, 1}$ is the sepal length, and so
+    on
+  \item most of the learning algorithms in this book operate on design matrices
+  \item it is not always possible for the sub-vectors (each row) of the matrix
+    to be of the same size
+  \item in that case rather than describing the dataset as a matrix with $m$
+    rows, we describe it a s a set containing $m$ elements:
+    ${\bm{x}^{(1)},...\bm{x}^{(m)}}$
+  \item this notation does not imply that any two example vectors within the
+    set have the same size
+  \item for labels in supervised learning, it can be anything: numeric codes,
+    for categories, or strings, etc
+  \item there is no rigid taxonomy for datasets and experiences, so one can be
+    creative with how they are represented so long as it works well
+\end{itemize}
 \end{document}
 
