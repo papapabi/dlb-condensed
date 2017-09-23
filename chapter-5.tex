@@ -169,5 +169,30 @@ performance at tasks in $T$ (as measured by $P$) improves with experience $E$."
 
 There are many other types of tasks that are not mentioned, this is just to
 give you a general idea of what is possible with machine learning.
+
+\subsection{The Performance Measure, $P$}
+\begin{itemize}
+  \item usually, $P$ is speciic to task $T$
+  \item \textbf{accuracy} - the proportion of examples for which the model
+    produces the 'correct' output
+  \item \textbf{error rate} - the proportin of examples for which the model
+    produces the 'wrong' output
+  \item the error rate is also known as the expected \textbf{0-1 loss} (0 if
+    correctly classified and 1 if it is not)
+  \item there are other tasks like density estimation where it does not make
+    sense to measure accuracy, instead we use a metric that gives the model a
+    real-valued score
+  \item we get these performance metrics using the \textbf{test set} of data
+  \item this test set is separate from the \textbf{training set}
+  \item in some cases it is difficult to quantify performance metrics
+  \item in a transcription task, should accuracy be aimed at trancscribing
+    entire sequences or should a more fine-grained approach be used, as in
+    partial credits for getting some of the elements correctly?
+  \item in a regression task, should we penalize a system more for making
+    frequent medium-sized mistakes or if it rarely makes very large mistakes?
+  \item these kind of design choices largely depend on the application of the
+    system
+  \item in other cases measuring it is impractical even
+\end{itemize}
 \end{document}
 
