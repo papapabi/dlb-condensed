@@ -343,5 +343,66 @@ Example: The Iris Dataset
   \item this terminology comes from when the output tends to go to $b$ in the
     absence of any input, different from a \textbf{statistical bias}
 \end{itemize}
+
+\section{Capacity, Overfitting, and Underfitting}
+The central challenge in any learning algorithm is that it must perform well on
+\textit{new, previously unseen} inputs -- not only those in the training set.
+The ability to perform well on previously unobserved input is known as
+\textbf{generalization}.
+Some terms:
+\begin{itemize}
+  \item training error - an error measure on the training set
+  \item generalization/test error - expected value of the error on a new input
+  \item generalization error is measured on a \textbf{test set}
+  \item the question is: how can we affect performance on the test set when we
+    can observe only the training set?
+\end{itemize}
+
+\subsubsection{Statistical learning theory}
+\begin{itemize}
+  \item we typically make a set of assumptions known collectively as
+    \textbf{i.i.d}
+  \item i.i.d = examples are independent (the probabilty that one event occurs
+    in no way affects the probability of another event occuring) and
+    identically distributed (drawn from the same probability distribution)
+  \item assume that the distribution for the training set and test set is the
+    same based from a single example
+  \item we call this shared underlying distribution the \textbf{data-generating
+      distribution}, denoted $p_{data}$
+  \item collectively, these allow us to mathematically study the relationship
+    between training set and test set (and their errors)
+  \item so we can definitely assume that expected training error = expected
+    test error
+  \item procedure: sample the training set $\to$ use it to choose parameters to
+    reduce training set error $\to$ sample the test set
+  \item under this process, $\mathbb{E}[error_{test}] \geq
+    \mathbb{E}[error_{training}]$
+  \item for a machine learning algorithm to perform well, it has to: a)
+    \textit{make the training error as small as possible}, and b) \textit{make
+      the gap between training error and test error as small as possible}
+  \item these two factors correspond to two central challenges in machine
+    learning: \textbf{overfitting}, and \textbf{underfitting}
+  \item underfitting: the model is not able to obtain a sufficiently low error
+    on the training set
+  \item overfitting: the gap between training and test error is too large
+  \item capacity: the ability to fit a wide variety of mathematical functions
+  \item models with low capacity may struggle to fit the training set
+  \item models with high capacity can overfit by memorizing properties of the
+    training set that do not serve them well on the test set
+  \item conrolling capacity: choose a proper \texbf{hypothesis space}
+  \item hypothesis space: the set of functions that the learning algorithm is
+    allowed to select as its solution
+  \item the linear regression algorithm has the set of all linear functions in
+    its hypothesis space
+  \item including other polynomials in its hypothesis space increases the
+    model's capacity    
+  \item this is fine because the output is still a linear function of its
+    \textit{parameters}, even though the input may have quadratics or cubics et
+    al
+  \item ML algorithms generally perform the best when their capacity is
+    appropriate for the true complexity of the task and the amount of training
+    data they are provided with
+\end{itemize}
 \end{document}
+
 
