@@ -479,7 +479,7 @@ Some terms:
     amount of these functions
   \item we can also give a learning algorithm a preference for one solution
     over another in its hypothesis space
-  \item recallthat including/excluding members from the hypotheses space
+  \item recall that including/excluding members from the hypotheses space
     controls a model's capacity
   \item expressing preference for one function over another is a generalization
     of this
@@ -491,6 +491,7 @@ Some terms:
   \item \textit{regularization is any modification made to a learning algorithm
       that is intended to reduce its generalization error but not its training
       error}
+  \item look up: \textbf{weight decay} for linear regresson
   \item one of the central concerns of the field of machine learning, next to
     optimization
   \item there is no best form of regularization, as implied by the no free
@@ -499,5 +500,55 @@ Some terms:
     task we wish to solve
   \item but a wide range of tasks may all be solved efficiently using very
     general-purpose forms of regularization
+\end{itemize}
+
+\section{Hyperparameters and Validation Sets}
+\textbf{Hyperparameters}
+\begin{itemize}
+  \item most ML algorithms have them
+  \item they cannot be directly learned from the regular training process
+  \item they are settings we can use to control the algorithm's behavior
+  \item "higher-level properties" -- complexity, how fast it should learn
+  \item usually fixed before the actual training begins
+  \item though we can design a nested learning algorithm in which one learns
+    the best hyperparameters for another leaning algorithm
+  \item in the case of polynomial regression: the degree of the polynomial, and
+    the $\lambda$ value used to control the strength of weight decay
+  \item linear-poly regression: "we can always fit the training set better with
+    a higher-degree polynomial and a weight decay setting of $\lambda = 0$ than
+    we could with a lower-degree polynomial with a positive weight decay
+    setting
+\end{itemize}
+\textbf{Validation Set}
+\begin{itemize}
+  \item minimizes overfitting
+  \item "trains" the hyperparameters
+  \item composed of examples coming from the same distribution as the training
+    set
+  \item we split the data set into two disjoint subsets
+  \item one of these subsets is for the model to learn the parameters (training
+    set)
+  \item the other is to minimize overfitting (validation set)
+  \item typically we use 80\% of the data for training and 20\% for validation
+    (assuming you don't have test cases)
+\end{itemize}
+
+\section{End-of-Chapter Summary and Miscellany}
+\begin{itemize}
+  \item model - a mathematical formula with a number of parameters that need to
+    be learned from the training data, that also need to apply to future,
+    unseen data
+  \item the crux of machine learning: \textbf{fitting a model to the data}
+  \item the bigger the dataset, the better. this always applies
+  \item there is no hard and fast rule for "bigger" but strive to get something
+    in the ballpark of thousands, tens of thousands, to millions
+  \item rule of thumb: 70\% should be training cases, 10\% test cases, and 20\%
+    validation cases
+  \item in the context of deep learning:
+  \item training set: the data used to adjust the weights on a neural network
+  \item validation set: minimizes overfitting
+  \item testing set: data used only for testing the final solution in order to
+    confirm the actual predictive power of the network
+  \item validation sets
 \end{itemize}
 \end{document}
