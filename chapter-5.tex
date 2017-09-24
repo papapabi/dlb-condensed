@@ -469,4 +469,35 @@ Some terms:
     distributions are relevant to the "real world", and what kinds of ML
     algorithms perform well on data drawn from these distributions
 \end{itemize}
+
+\subsection{Regularization}
+\begin{itemize}
+  \item we can design learning algorithms that perform well on a specific task
+    via building a set of preferences into the learning algorithm
+  \item we can control the performance of our algorithms by choosing what kind
+    of functions we allow them to operate on, in addition to controlling the
+    amount of these functions
+  \item we can also give a learning algorithm a preference for one solution
+    over another in its hypothesis space
+  \item recallthat including/excluding members from the hypotheses space
+    controls a model's capacity
+  \item expressing preference for one function over another is a generalization
+    of this
+  \item excluding functions: expressing an infinitely strong preference against
+    that function
+  \item we can \textbf{regularize} a model that learns a function
+    $f(\bm{x};\bm{\Theta})$ by adding a penalty called a \textbf{regularizer}
+    to the cost function
+  \item \textit{regularization is any modification made to a learning algorithm
+      that is intended to reduce its generalization error but not its training
+      error}
+  \item one of the central concerns of the field of machine learning, next to
+    optimization
+  \item there is no best form of regularization, as implied by the no free
+    lunch theorem
+  \item again we choose a form of regularization that is well-suited to the
+    task we wish to solve
+  \item but a wide range of tasks may all be solved efficiently using very
+    general-purpose forms of regularization
+\end{itemize}
 \end{document}
