@@ -445,4 +445,28 @@ Some terms:
   \item the main takeaway in the above wall of text is that \textbf{capacity is
       very different from training set size, do not see them as the same thing}
 \end{itemize}
+
+\subsection{The No Free Lunch Theorem}
+\begin{itemize}
+  \item machine learning promises the find rules that are \textit{probably}
+    correct about \textit{most} members of the set they are concerned about
+  \item solutions aren't absolutes 
+  \item because to logically infer a rule describing every member of a set, one
+    must have information about every member of that set (which is not possible
+    most times)
+  \item the \textbf{no free lunch theorem} for machine learning states that,
+    averaged over all possible data-generating distributions, every
+    classification algorithm has the same error rate when classifying prevously
+    unobserved points
+  \item this nihlistic theorem states that, in some sense, no machine learning
+    algorithm is universally any better than any other
+  \item fortunately, these theorem only holds when we average over \textit{all}
+    possible data-generating distributions
+  \item if we make assumptions about the probability distributions we enconter
+    in real-world applications, we can design learning algorithms that perform
+    well on these distributions
+  \item indeed, the goal of ML research is to understand what kinds of
+    distributions are relevant to the "real world", and what kinds of ML
+    algorithms perform well on data drawn from these distributions
+\end{itemize}
 \end{document}
