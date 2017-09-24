@@ -405,7 +405,44 @@ Some terms:
   \item so a way to change capacity is by changing the number of input features
     it has, and simultaneously adding new parameters associated with those
     features
+  \item \textbf{representational capacity} - the family of functions the
+    learning algorithm can choose from when varying the parameters 
+  \item \textbf{Occam's razor} - among competing hypotheses that explain known
+    observations equally well, we should choose the "simplest" one
+  \item statistical learning theory provides various means of quantifying model
+    capacity
+  \item the most well known is the \textbf{Vapnik-Chervonenkis dimension} or VC
+    dimension
+  \item VC dimension measures the capacity of a binary classifier
+  \item VC dimension is defined as being the largest possible value of $m$ for
+    which there exists a training set of $m$ different $\bm{x}$ points that the
+    classifier can label arbitrarily
+  \item the most important results in statistical learning theory shows that
+    \textbf{the discrepancy between training error and generalization error is
+      bounded from above by a quantity that grows as the model capacity grows
+      but shrinks as the number of training examles increases}
+  \item in my own terms, this means that the higher you make a model's
+    capacity, after a certain point (the optimal capacity), it won't be able to
+    generalize well (will have a high test error) (but of course, its training
+    error will be super low)
+  \item to balance it all out, we need to choose a sufficiently complex
+    hypothesis to achieve low training/test error
+  \item nonparametric learning algorithms are used to reach arbitrarily high
+    capacity
+  \item sometimes, they are just theoretical absractions that cannot be
+    implemented in practice
+  \item we can make a nonparametric learning algorithm by wrapping a parametric
+    learning algorithm inside another algorithm that increases the number of
+    parameters as needed
+  \item \textbf{Bayes error rate} - the lowest possible error rate for any
+    classifier of a random outcome (for instance, one of two categories) and is
+    analogous to the irreducible error
+  \item expected generalization \textbf{can never increase} as the number of
+    training examples increases
+  \item the more the merrier, even more so in machine learning, no exceptions
+  \item any fixed parametric model with less then optimal capacity \textbf{will
+      asymptote to an error value that exceed the Bayes error}
+  \item the main takeaway in the above wall of text is that \textbf{capacity is
+      very different from training set size, do not see them as the same thing}
 \end{itemize}
 \end{document}
-
-
