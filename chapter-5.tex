@@ -577,6 +577,8 @@ underfitting, and overfitting.
 
 \subsection{Bias}
 \begin{itemize}
+  \item bias measures the expected deviation from the true value of the funtion
+    or parameter
   \item a feature of a statistic whereby the expected value of the results
     differs from the true underlying quantitative parameter being estimated
   \item defined as:
@@ -662,6 +664,26 @@ Variance and Standard Error
   \item this is a common property of commonly-used estimators
 \end{itemize}
 
+\subsection{Balancing Bias and Variance to Minimize Mean Squared Error}
+\begin{itemize}
+  \item which estimator is better; one with more bias, or one with more
+    variance?
+  \item the most common way to negotiate this trade-off is to use
+    cross-validation
+  \item in the case of bias and variance, \textbf{mean squared error} (MSE)
+    \begin{align}
+      \text{MSE} &= \expectation[(\statistic_m - \parameter)^2]\\
+      &= \text{Bias}(\statistic_m)^2 + \Var(\statistic_m)
+    \end{align}
+  \item measures the average of the squares of the difference between the
+    estimator and what is estimated
+  \item always non-negative, and values closer to zero are better
+  \item the relationship between bias and variance is tightly linked to the
+    machine learning concepts of capacity, underfitting, and overfitting
+  \item \textbf{when generalization error is measured by the MSE, increasing
+      capacity tends to decrease bias and increase variance}  
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
@@ -680,8 +702,12 @@ Variance and Standard Error
     confirm the actual predictive power of the network
   \item validation sets
   \item bias: how much the expected value of the statistic differs from the
-    parameter
+    true value, or the parameter
   \item variance: how much the expected estimate in question varies as
     we independently resample the dataset from the distribution
+  \item the relationship between bias and variance is tightly linked to the
+    machine learning concepts of capacity, underfitting, and overfitting
+  \item as capacity increases, bias tends to decrease and variance tends to
+    increase
 \end{itemize}
 \end{document}
