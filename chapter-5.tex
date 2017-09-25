@@ -5,6 +5,7 @@
 \usepackage{bm}
 \def\realnumbers{\mathbb{R}}
 \def\expectation{\mathbb{E}}
+\def\Var{\mathrm{Var}}
 \def\statistic{\hat{\bm{\theta}}}
 \def\parameter{\bm{\theta}}
 
@@ -566,8 +567,12 @@ underfitting, and overfitting.
     a random process, and it is a function of the data
   \item as previously stated, sometimes, we are interested in performin
     function estimation (function approximation)
-  \item function estimtion: predict a varable $\bm{y}$ given an input vector
+  \item function estimation: predict a varable $\bm{y}$ given an input vector
     $\bm{x}$
+  \item estimates of the true underlying parameter is always uncertain because
+    we only have a finite number of samples, in the sense that the statistics
+    might differ at each resample, even if the same data-generating disribution
+    is the same
 \end{itemize}
 
 \subsection{Bias}
@@ -585,6 +590,7 @@ underfitting, and overfitting.
       unbiased} if $\lim_{m \to \infty} \text{bias}(\statistic_m) = \bm{0}$,
     which implies that $\lim_{m \to \infty} \expectation{(\statistic_m)} =
     \parameter$
+  \item we want the bias to have a low value, as close to 0 as possible
   \item the derivation of unbiased estimators (or good enough estimators)
     usually comes from clever algebraic manipulation, making an expression
     inside (substitute the estimator in the definition of bias) look like the
@@ -617,6 +623,45 @@ underfitting, and overfitting.
     properties
 \end{itemize}
 
+\subsection{Variance and Standard Error}
+Variance and Standard Error
+\begin{itemize}
+  \item how much the estimator varies as a function of the data sample
+  \item the \textbf{variance} of an estimator is simply:
+    \begin{equation}
+      \Var(\hat{\theta})
+    \end{equation}
+    where the random variable is the training set
+  \item square root of the variance: \textbf{standard error}, item denoted
+    SE$(\hat{\theta})$
+  \item once more, these quantities provide a quantitative measure of how we
+    would expect the estimate we compute from data to vary as we independently
+    resample the dataset from the underlying data-generating process
+  \item just as we like an estimator to exhibit low bias, we would also like it
+    to have relatively low variance
+  \item the expected degree of variation in any estimator is a source of error
+    we want to quantify
+  \item the standard error of the mean is given by:
+    \begin{equation}
+      \text{SE}(\hat{\mu}_m) = \sqrt{\Var\left[\frac{1}{m} \sum_{i=1}^m x_i
+        \right]} = \frac{\sigma}{\sqrt{m}}
+    \end{equation}
+    where $\sigma^2$ is the true variance of the samples $x_i$
+  \item the standard error is often estimated by using an estimate of $\sigma$
+  \item unfortunately, estimates of $\sigma$ tend to underestimate the true
+    standard deviation but are still used in practice
+  \item for large $m$, the approximation is quite reasonable
+  \item \textbf{the standard error of the mean is very useful in machine
+      learning experiments}
+  \item we often estimate the generalization error by computing the sample mean
+    of the error on the test set
+  \item the number of samples in the test set determines the accuracy of this
+    estimate
+  \item \textbf{the variance of the estimator decreases as a function of $m$,
+      the number of example in the dataset}
+  \item this is a common property of commonly-used estimators
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
@@ -634,5 +679,9 @@ underfitting, and overfitting.
   \item testing set: data used only for testing the final solution in order to
     confirm the actual predictive power of the network
   \item validation sets
+  \item bias: how much the expected value of the statistic differs from the
+    parameter
+  \item variance: how much the expected estimate in question varies as
+    we independently resample the dataset from the distribution
 \end{itemize}
 \end{document}
