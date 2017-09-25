@@ -4,6 +4,9 @@
 \usepackage{amsmath}
 \usepackage{bm}
 \def\realnumbers{\mathbb{R}}
+\def\expectation{\mathbb{E}}
+\def\statistic{\hat{\bm{\theta}}}
+\def\parameter{\bm{\theta}}
 
 \begin{document}
 \setcounter{chapter}{4}
@@ -544,27 +547,74 @@ underfitting, and overfitting.
     interest
   \item a single parameter, or a vector of parameters in some parametric model
   \item can also be a whole function
-  \item denotation: point estimate $\hat{\bm{\theta}}$ of parameter
-    $\bm{\theta}$
+  \item denotation: point estimate $\statistic$ of parameter
+    $\parameter$
   \item let $\{\bm{x}^{(1)},...,\bm{x}^{(m)}\}$ be a set of i.i.d. data points
     of size $m$
   \item a \textbf{point estimator} or \textbf{statistic} is any function of the
     data points:
     \begin{equation}
-      \hat{\bm{\theta}} = g(\bm{x}^{(1)},...,\bm{x}^{(m)})
+      \statistic_m = g(\bm{x}^{(1)},...,\bm{x}^{(m)})
     \end{equation}
   \item note that the definition does not require $g$ to return a value that is
-    close to the true $\bm{\theta}$, or even that the range of $g$ be the same
-    as the set of allowable values of $\bm{\theta}$
+    close to the true $\parameter$, or even that the range of $g$ be the same
+    as the set of allowable values of $\parameter$
   \item any function thus qualifies to be an estimator
   \item the goal is to find a \textit{good} estimator whose output is close to
     the true underlying parameter(s) that generated the training data
-  \item $\hat{\bm{\theta}}$ is a random variable, since the data is drawn from
+  \item $\statistic$ is a random variable, since the data is drawn from
     a random process, and it is a function of the data
   \item as previously stated, sometimes, we are interested in performin
     function estimation (function approximation)
   \item function estimtion: predict a varable $\bm{y}$ given an input vector
     $\bm{x}$
+\end{itemize}
+
+\subsection{Bias}
+\begin{itemize}
+  \item a feature of a statistic whereby the expected value of the results
+    differs from the true underlying quantitative parameter being estimated
+  \item defined as:
+    \begin{equation}
+      \text{bias}(\statistic_m) = \expectation{(\statistic_m)} - \parameter
+    \end{equation}
+  \item an estimator $\statistic_m$ is said to be \textbf{unbiased} if
+    $\text{bias}(\statistic_m) = \bm{0}$, which implies
+    $\expectation{(\statistic_m)} = \parameter$
+  \item an estimator $\statistic_m$ is said to be \textbf{asymptotically
+      unbiased} if $\lim_{m \to \infty} \text{bias}(\statistic_m) = \bm{0}$,
+    which implies that $\lim_{m \to \infty} \expectation{(\statistic_m)} =
+    \parameter$
+  \item the derivation of unbiased estimators (or good enough estimators)
+    usually comes from clever algebraic manipulation, making an expression
+    inside (substitute the estimator in the definition of bias) look like the
+    distribution in question, with different or same parameters
+  \item A common estimator for the Bernoulli Distribution for $\theta$ is the
+    mean of the samples (sum all sample values, divide by how many)
+\end{itemize}
+
+\subsubsection{Gaussian Distribution}
+\begin{itemize}
+  \item a common estimator for the Gaussian Distribution $\mu$ (the mean
+    parameter) is known as the \textbf{sample mean}:
+    \begin{equation}
+      \hat{mu}_m = \frac{1}{m} \sum_{i=1}^m x_i
+    \end{equation}
+  \item the first estimator of $\sigma^2$ is known as the \textbf{sample
+      variance}:
+    \begin{equation}
+      \hat{\sigma}_m^2 = \frac{1}{m} \sum_{i=1}^m \left(x_i -
+        \hat{\mu}_m\right)^2
+    \end{equation}
+  \item it can then be derived that the \textbf{unbiased sample variance} is:
+    \begin{equation}
+      \tilde{\sigma}_m^2 = \frac{1}{m-1} \sum_{i=1}^m \left(x_i -
+        \hat{\mu}_m\right)^2
+    \end{equation}
+  \item while unbiased estimators are clearly desirable, they are not always
+    the "best" estimators
+  \item we will often use biased estimators that possess some important
+    properties
 \end{itemize}
 
 \section{End-of-Chapter Summary and Miscellany}
