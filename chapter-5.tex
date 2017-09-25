@@ -684,6 +684,23 @@ Variance and Standard Error
       capacity tends to decrease bias and increase variance}  
 \end{itemize}
 
+\subsection{Consistency}
+\begin{itemize}
+  \item ideally, we want our point estimates to converge to the true value of
+    the corresponding parameters as the number of data points $m$ in our
+    dataset increases
+  \item an estimator is \textbf{consistent}, if it converges in probability to
+    the true value of the parameter:
+    \begin{equation}
+      \text{p}\lim_{m \to \infty} \statistic_m = \parameter
+    \end{equation}
+  \item consistency ensures that the bias induced by the estimator diminishes
+    as the number of data examples grows
+  \item however, the reverse is not true -- asymptotic unbiasedness does not
+    imply consistency
+  \item the book has a really good example at page 129 illustrating this fact
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
