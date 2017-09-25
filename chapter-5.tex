@@ -538,6 +538,34 @@ There are many foundational concepts such as parameter estimation, bias, and
 variance that are useful to formally characterize notions of generalization,
 underfitting, and overfitting.
 
+\subsection{Point Estimation}
+\begin{itemize}
+  \item the attempt to provide the single "best" prediction of some quantity of
+    interest
+  \item a single parameter, or a vector of parameters in some parametric model
+  \item can also be a whole function
+  \item denotation: point estimate $\hat{\bm{\theta}}$ of parameter
+    $\bm{\theta}$
+  \item let $\{\bm{x}^{(1)},...,\bm{x}^{(m)}\}$ be a set of i.i.d. data points
+    of size $m$
+  \item a \textbf{point estimator} or \textbf{statistic} is any function of the
+    data points:
+    \begin{equation}
+      \hat{\bm{\theta}} = g(\bm{x}^{(1)},...,\bm{x}^{(m)})
+    \end{equation}
+  \item note that the definition does not require $g$ to return a value that is
+    close to the true $\bm{\theta}$, or even that the range of $g$ be the same
+    as the set of allowable values of $\bm{\theta}$
+  \item any function thus qualifies to be an estimator
+  \item the goal is to find a \textit{good} estimator whose output is close to
+    the true underlying parameter(s) that generated the training data
+  \item $\hat{\bm{\theta}}$ is a random variable, since the data is drawn from
+    a random process, and it is a function of the data
+  \item as previously stated, sometimes, we are interested in performin
+    function estimation (function approximation)
+  \item function estimtion: predict a varable $\bm{y}$ given an input vector
+    $\bm{x}$
+\end{itemize}
 
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
