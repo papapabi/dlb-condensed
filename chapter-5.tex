@@ -701,6 +701,26 @@ Variance and Standard Error
   \item the book has a really good example at page 129 illustrating this fact
 \end{itemize}
 
+\section{Maximum Likelihood Estimation}
+The most common principle from which we can derive specific functions that are
+good estimators for different models.
+
+Consider a set of $m$ examples $\mathbb{X} = \{\bm{x}_1,...,\bm{x}_m\}$ drawn
+independently from the true but unknown data-generating distirution
+$p_{data}(\bm{x})$.
+
+Let $p_{model}(\bm{x};\parameter)$ be a parametric family of probability
+distributions over the same space indexed by $\parameter$. In other words,
+$p_{model}(\bm{x};\parameter)$ maps any configuration $\bm{x}$ to a real number
+estimating the true probability $p_{data}(\bm{x})$.
+
+The maximum likelihood estimator for $\parameter$ is then defined as
+\begin{align}
+  \parameter_{ML} &= \underset{\parameter}{\arg\max}
+  p_{model}(\mathbb{X};\parameter)\\
+  &= \underset{\parameter}{\arg\max} \prod_{i=1}^m p_{model}(\bm{x}_i;\parameter)
+\end{align}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
