@@ -769,6 +769,26 @@ Minimizing the KL divergence is the same as maximizing the likelihood.
   \item linear regression may be justified as a maximum likelihood procedure
 \end{itemize}
 
+\subsection{Properties of Maximum Likelihood}
+\begin{itemize}
+  \item shown to be the best estimator asymptotically (as the number of
+    examples $m \to \infty$)
+  \item MLE is consistent, under appropriate conditions:
+  \item Firstly, the true distribution $p_{data}$ must lie within the model
+    family $p_{model}(\cdot ; \parameter)$. Otherwise, no estimator can recover
+    $p_{data}$.
+  \item Secondly, the true distribution $p_{data}$ must correspond to exactly
+    one value of $\parameter$. Otherwise, maximum likelihood will not be able
+    to determine which value of $\parameter$ was used by the data-generating
+    process (Even though the correct $p_{data}$ was recovered)
+  \item consistent estimators differ in their \textbf{statistical efficiency}
+  \item it can be shown (the Cramer-Rao lower bound) that no other consistent
+    estimator has a lower MSE than the maximum likelihood estimator 
+  \item for these reasons (consistency and efficiency), maximum likelihood is
+    often considered the preferred estimator for use in machine learning
+\end{itemize}
+
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
@@ -794,5 +814,7 @@ Minimizing the KL divergence is the same as maximizing the likelihood.
     machine learning concepts of capacity, underfitting, and overfitting
   \item as capacity increases, bias tends to decrease and variance tends to
     increase
+  \item maximum likelihood is often considered as the preferred esitmator to
+    use for machine learning
 \end{itemize}
 \end{document}
