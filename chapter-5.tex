@@ -718,8 +718,56 @@ The maximum likelihood estimator for $\parameter$ is then defined as
 \begin{align}
   \parameter_{ML} &= \underset{\parameter}{\arg\max}
   p_{model}(\mathbb{X};\parameter)\\
-  &= \underset{\parameter}{\arg\max} \prod_{i=1}^m p_{model}(\bm{x}_i;\parameter)
+  &= \underset{\parameter}{\arg\max} \prod_{i=1}^m
+  p_{model}(\bm{x}_i;\parameter).
 \end{align}
+
+This product over many probabilities can be inconvenient for various reasons.
+For example, it is prone to numerical underflow. Taking the logarithm of the
+likelihood does not change its argmax but does conveniently transform a product
+into a sum:
+\begin{equation}
+  \parameter_{ML} = \underset{\parameter}{\arg\max} \sum_{i=1}^m \log p_{model}
+  (\bm{x}_i; \parameter).
+\end{equation}
+
+Because the $\arg\max$ does not change when we rescale the cost function, we
+can divide by $m$ to obtain a version of the criterion that is expressed as an
+expectation with respect to the empirical distirbution $\hat{p}_{data}$ defined
+by the training data:
+\begin{equation}
+  \parameter_{ML} = \underset{\parameter}{\arg\max} \expectation_{\bm{x}
+    \sim \hat{p}_{data}} \log p_{model} (\bm{x};\parameter).
+\end{equation}
+
+Maximum likelihood is an attempt to make the model distribution match the
+empirical distribution $\hat{p}_{data}$. Ideally, we would like to match the
+true data-generating distribution $p_{data}$, but we have no direct access to
+this distribution.
+
+Minimizing the KL divergence is the same as maximizing the likelihood.
+
+\subsection{Conditional Log-Likelihood and Mean Squared Error}
+\begin{itemize}
+  \item the maximum likelihood estimator can readily be generalized to estimate
+    a conditional probability $P(\bm{y} | \bm{x}; \parameter)$ in order to
+    predict $\bm{y}$ given $\bm{x}$
+  \item the basis for most supervised learning
+  \item the conditinal maximum likelihood estimator is:
+    \begin{equation}
+      \parameter_{ML} = \underset{\parameter}{\arg\max} P(\bm{Y} | \bm{X};
+      \parameter)
+    \end{equation}
+    given $\bm{X}$ represents all our inputs and $\bm{Y}$ all our observed
+    targets
+  \item if the examples are assumed to be i.i.d., then this can be decomposed
+    into:
+    \begin{equation}
+      \parameter_{ML} = \underset{\parameter}{\arg\max} \log P(\bm{y}^{(i)} |
+      \bm{x}^{(i)}; \parameter)
+    \end{equation}
+  \item linear regression may be justified as a maximum likelihood procedure
+\end{itemize}
 
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
