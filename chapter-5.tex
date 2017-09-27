@@ -810,6 +810,13 @@ Minimizing the KL divergence is the same as maximizing the likelihood.
       p(\parameter | x_1,...,x_m) = \frac{p(x_1,...,x_m |
         \parameter)p(\parameter)}{p(x_1,...,p_m)}
     \end{equation}
+  \item the Bayesian approach is to make predictions using a full distribution
+    over $\parameter$ 
+  \item the prior has an influence by shifting probability mass density towards
+    regions of the parameter space that are preferred a priori
+  \item Bayesian methods typically generalize much better when limited training
+    data is available but typically suffer from high computational cost when
+    the number of training examples is large
 \end{itemize}
 
 Bayseian vs Frequentist
@@ -817,12 +824,14 @@ Bayseian vs Frequentist
   \item frequentist: Data are a repeatable random sample - frequency exists.
     Underlying parameters are fixed (i.e., they remain constant during this
     repeatable sampling process.)
+  \item frequentist: Summarizing all knowledge contained in the dataset with a
+    single point estimate.*
   \item bayseian: Data are fixed. Parameters are unknown and are thus described
     as random variables.
   \item Bayesian - $p$ the probability is not a value, it's a distribution
+  \item the variance of the estimator is an assesment of how the estimate might
+    change with alternative samplings
 \end{itemize}
-
-
 
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
