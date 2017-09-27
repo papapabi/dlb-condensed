@@ -833,6 +833,45 @@ Bayseian vs Frequentist
     change with alternative samplings
 \end{itemize}
 
+\section{Supervised Learning Algorithms}
+Supervised learning algorithms are, roughly speaking, learning algorithms that
+learn to associate some input with some output, given a training set of
+examples of inputs $\bm{x}$ and outputs $\bm{y}$. In many cases the outputs
+$\bm{y}$ may be difficult to collect automatically and must be provided by a
+human "supervisor", but the term still applies even when the training set
+targets were collected automatically.
+
+\subsection{Probabilistic Supervised Learning}
+Most supervised learning algorithms in this book are based on estimating a
+probability distribution $p(y | \bm{x})$. We can do this simply by using MLE to
+find the best parameter vector $\parameter$ for a parametric family of
+distributions $p(y | \bm{x};\parameter)$.
+\begin{itemize}
+  \item linear regression corresponds to the family:
+    \begin{equation}
+      p(y | \bm{x}; \parameter) = \mathcal{N}(y;\parameter^\intercal\bm{x},\bm{I})
+    \end{equation}
+  \item the gaussian distribution over real-valued numbers is parameterized in
+    terms of a mean
+  \item linear regression can be generalized to classification by defining a
+    different family of probability distributions
+  \item any distribution over a binary variable is slightly more complicated,
+    because its mean must always be between 0 and 1
+  \item one way to solve this problem is to use the logistic sigmoid function to
+    squash the output of the linear function into the interval (0, 1) and
+    interpret that value as a probability:
+    \begin{equation}
+      \label{logistic_regression}
+      p(y = 1 | \bm{x}; \parameter) = \sigma(\parameter^\intercal\bm{x})
+    \end{equation}
+  \item equation \ref{logistic_regression} is known as \textbf{logistic
+      regression}
+  \item there is no closed-form solution for its optimal weights, so we seach
+    for them by maximizing log-likelihood
+  \item we usually do this by minimizing the negative log-likelihood using
+    gradient descent
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
