@@ -789,6 +789,41 @@ Minimizing the KL divergence is the same as maximizing the likelihood.
 \end{itemize}
 
 
+\section{Bayesian Statistics}
+\begin{itemize}
+  \item different from \textbf{frequentist statistics}
+  \item considers all possible values of $\parameter$ when making a prediction
+  \item unknown quantiies are treated probabilistically 
+  \item "degrees of belief"
+  \item 'the state of the world can always be updated'
+  \item parameters are unknown and described probabilistcally, data are fixed
+    (data is not random)
+  \item the true parameter $\parameter$ is uncertain and therefore should be
+    represented as a random variable
+  \item before observing the data, we represent our knowledge of $\parameter$
+    using the \textbf{prior probability distribution}, $p(\parameter)$
+  \item now consider the we have a set of data samples $\{x_1,...,x_m\}$
+  \item we can recover the effect of data on our belief about $\parameter$ by
+    combining the data likelihood $p(x_1,...,x_m | \parameter)$ with the prior
+    via Bayes' rule:
+    \begin{equation}
+      p(\parameter | x_1,...,x_m) = \frac{p(x_1,...,x_m |
+        \parameter)p(\parameter)}{p(x_1,...,p_m)}
+    \end{equation}
+\end{itemize}
+
+Bayseian vs Frequentist
+\begin{itemize}
+  \item frequentist: Data are a repeatable random sample - frequency exists.
+    Underlying parameters are fixed (i.e., they remain constant during this
+    repeatable sampling process.)
+  \item bayseian: Data are fixed. Parameters are unknown and are thus described
+    as random variables.
+  \item Bayesian - $p$ the probability is not a value, it's a distribution
+\end{itemize}
+
+
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
@@ -816,5 +851,6 @@ Minimizing the KL divergence is the same as maximizing the likelihood.
     increase
   \item maximum likelihood is often considered as the preferred esitmator to
     use for machine learning
+  \item Bayseian statistics vs Frequentist statistics
 \end{itemize}
 \end{document}
