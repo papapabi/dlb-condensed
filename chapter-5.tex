@@ -872,6 +872,48 @@ distributions $p(y | \bm{x};\parameter)$.
     gradient descent
 \end{itemize}
 
+\subsection{Support Vector Machines}
+\begin{itemize}
+  \item one of the most influential approaches to supervised learning
+  \item similar to logistic regression in that it is driven by a linear
+    function 
+    \begin{equation}
+      \label{svm_equation}
+      \bm{w}^\intercal\bm{x} = b
+    \end{equation}
+  \item unlike logistic regression, SVMs do not provide probabilities
+  \item instead, it outputs a \textbf{class identity}
+  \item SVMs predict that a positive class is present when \ref{svm_equation}
+    is positive
+  \item likewise, SVMs predict that a negative class is present when
+    \ref{svm_equation} is negative
+  \item \textbf{kernel trick} : consists of observing that many ML algorithms
+    can be written exclusively in terms of dot products between examples
+  \item it can be shown that the linear function used by the SVM can be
+    re-written as:
+    \begin{equation}
+      \bm{w}^\intercal\bm{x} + b = b + \sum_{i=1}^m \alpha_i \bm{x}^\intercal
+      \bm{x}^{(i)},
+    \end{equation}
+    where $\bm{x}^{(i)}$ is a training example, $\bm{\alpha}$ is a vector of
+    coefficients
+  \item rewriting the learning algorithm this way enables us to replace
+    $\bm{x}$ with the output of a given feature function $\phi(\bm{x})$ and the
+    dot product with a function $k(\bm{x},\bm{x}^{(i)}) = \phi(\bm{x}) \cdot
+    \phi(\bm{x}^{(i)})$ called a \textbf{kernel}
+  \item after replacing dot products with kernel evaluations, we can make
+    predictions using the function:
+    \begin{equation}
+      f(\bm{x}) = b + \sum_i \alpha_i k(\bm{x}, \bm{x}^{(i)})
+    \end{equation}
+  \item this function is nonlinear with respct to $\bm{x}$, but the
+    relationship between $\phi(\bm{x})$ and $f(\bm{x})$ is linear
+  \item the relationship between $\bm{\alpha}$ and $f(\bm{x})$ is also linear
+  \item in plain terms, this kernel-based function is exactly equivalent to
+    preprocessing the data by applying $\phi(\bm{x})$ to all inputs, then
+    learning a linear model in the new transformed space
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
