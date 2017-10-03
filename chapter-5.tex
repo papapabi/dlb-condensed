@@ -927,6 +927,38 @@ distributions $p(y | \bm{x};\parameter)$.
   \item decision tree
 \end{itemize}
 
+\section{Unsupervised Learning Algorithms}
+\begin{itemize}
+  \item algorithms that experience only "features" but not a supervision signal
+  \item informally, unsupervised learning refers to most attempts to extract
+    information from a distribution that do not require human labor to annotate
+    examples
+  \item the term is usually associated with: a) density estimation, b) learning
+    to draw samples from a distribution, c) learning to denoise data from some
+    distribution, d) finding a manifold that the data lies near, or e)
+    clustering the data into groups of related examples
+  \item a classic unsupervised leaning task is to find the "best"
+    representation of data
+  \item by that, generally speaking we are looking for a representation that
+    preserves as much information about $\bm{x}$ as possible while obeying some
+    penalty or constraint aimed at keeping the representation \textit{simpler}
+    or more accessible than $\bm{x}$ itself
+  \item (3) "simpler" representations: 1) lower-dimensional representations, 2)
+    sparse representations, and 3) independent representations
+  \item lower-dimensional representations attempt to compress as much
+    information about $x$ as possible in a smaller representation
+  \item sparse representations embed the dataset into a representation whose
+    entries are mostly zeros for most inputs
+  \item independent representations attempt to \textit{disentagle} the sources
+    of variation underlying the data distribution such that the dimensions of
+    the representation are statistically independent
+  \item these three criteria are certainly not mutually exclusive
+  \item the notion of representation is one of the central themes of deep
+    learning
+  \item in this section, we develop some simple examples of representation
+    learning algorithms
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
