@@ -959,6 +959,51 @@ distributions $p(y | \bm{x};\parameter)$.
     learning algorithms
 \end{itemize}
 
+\subsection{Principal Components Analysis}
+\begin{itemize}
+  \item PCA is a statistical procedure that uses an orthogonal transformation
+    to convert a set of observations of possibly correlated variables into a
+    set of linearly uncorrelated variables called \textbf{principal components} 
+  \item PCA provides a means of compressing data
+  \item we can view PCA as an unsupervised learning algorithm that learns a
+    representation of data
+  \item PCA learns a representation that has lower dimensionality that the
+    original input (lower-dimensional representation)
+  \item it also learns a representation whose elements have no linear
+    correlation with each other (a somewhat independent representation)
+  \item to achieve full independence, a representation learning algorithm must
+    also remove the nonlinear relationships between variables
+  \item PCA learns an orthogonal, linear transformation of data that aligns the
+    direction of greatest variance with the axes of the new space
+  \item let us consider the $m \times n$ design matrix $\bm{X}$; we will assume
+    that the data has a mean of zero, $\expectation[\bm{x}] = \bm{0}$
+  \item if this is not the case, the data can easily be centered by subtracting
+    the mean from all examples in a preprocessing step
+  \item the unbiased sample covariance matrix associated with $\bm{X}$ is given
+    by
+    \begin{equation}
+      \Var[\bm{x}] = \frac{1}{m - 1} \bm{X}^\intercal \bm{X}
+    \end{equation}
+  \item PCA finds a representation (through linear transformation) $\bm{z} =
+    \bm{W}^\intercal x$ where $\Var[z]$ is diagonal
+  \item through a derivation, with $\bm{W}$ as the right singular vectors in
+    the decomposition $\bm{X} = \bm{U}\sum\bm{W}^\intercal$
+  \item also:
+    \begin{equation}
+      \bm{X}^\intercal\bm{X} = \left( \bm{U} \sum \bm{W}^\intercal
+      \right)^\intercal \bm{U} \sum \bm{W}^\intercal = \bm{W} (\sum)^2
+      \bm{W}^\intercal
+    \end{equation}
+  \item when we project the data $\bm{x}$ to $\bm{z}$, via the linear
+    transformation $\bm{W}$, the resulting representation has a diagonal
+    covariance matrix (as given by $(\sum)^2$), which immediately impliesthat
+    the individual elements of $\bm{z}$ are mutually uncorrelated
+  \item the ability of PCA to transform data into a representation where the
+    elements are mutually uncorrelated is a very important property of PCA
+  \item attempts to \textit{disentangle the unknown factors of variation}
+    underlying the data
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
