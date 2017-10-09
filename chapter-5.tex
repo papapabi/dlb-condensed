@@ -1002,6 +1002,13 @@ distributions $p(y | \bm{x};\parameter)$.
     elements are mutually uncorrelated is a very important property of PCA
   \item attempts to \textit{disentangle the unknown factors of variation}
     underlying the data
+  \item in PCAs, the disentangling takes the form of finding a rotation of the
+    input space (described by $\bm{W}$) that aligns the principal axes of
+    variance with the basis of the new representation space associated with
+    $\bm{z}$
+  \item this is merely simple linear transformation though, there are other
+    learning representations that disentangle more complicated forms of feature
+    dependencies
 \end{itemize}
 
 \section{End-of-Chapter Summary and Miscellany}
