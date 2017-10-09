@@ -1011,6 +1011,57 @@ distributions $p(y | \bm{x};\parameter)$.
     dependencies
 \end{itemize}
 
+\subsection{$k$-means Clustering}
+\begin{itemize}
+  \item a simple representation learning algorithm
+  \item divides the training set into $k$ different clusters of examples that
+    are 'near' (to a certain statistical degree) each other
+  \item providing a $k$-dimensional one-hot code vector $\bm{h}$ representing an
+    input $\bm{x}$
+  \item if $\bm{x}$ belongs to cluster $i$, then $h_i = 1$, and all other
+    entries of the representation $\bm{h}$ are zero
+  \item an example of a sparse representation, as the majority of its entries
+    are zero for every input
+  \item one-hot codes are an extreme example of sparse representations that lose
+    many of the benefits of a distributed representation
+  \item still confers some statistical advantages (all examples in the same
+    cluster are similar to each other)
+  \item confers also the computational advantage that the entire representation
+    may be captured by a single integer
+  \item the $k$-means algorithm works by initializing $k$ different centroids
+    $\{\bm{\mu}^{(1)},...,\bm{\mu}^{(k)}\}$ to different values, then
+    alternating between two different steps until convergence
+  \item in one step, each training example is assigned to cluster $i$, where
+    $i$ is the index of the nearest centroid $\bm{\mu}^{(i)}$
+  \item in the other step, each centroid $\bm{\mu}^{(i)}$ is updated to the
+    mean of all training examples $\bm{x}^{(j)}$ assigned to cluster $i$
+  \item a major downside to this is the nature of clustering itself -- there is
+    no single criterion that measures how well a clustering of data corresponds
+    to the real world
+  \item moreover, there may be many different clusterings that all correspond
+    well to some property of the real world
+  \item we hope to a clustering that relates to one feature
+  \item but we may obtain a different, equally valid clustering that is not
+    relevant to the task!
+  \item ex: images of red trucks, red cars, gray trucks, gray cars
+  \item suppose we have two clustering algorithms operating on the
+    aforementioned dataset, and we ask each algorthm to find two clusters
+  \item one clustering algorithm may find a cluster of cars and a cluster of
+    trucks
+  \item while the other may find a cluster of red vehicles and a cluster of
+    gray vehicles
+  \item all we know is that the clusters are different, again, this is all we
+    know
+  \item this is precisely why we prefer a distributed representation over a
+    one-hot representation
+  \item distributed representations could have two attributes for each vehicle
+    -- one for its color, one for whether it is a car or a truck
+  \item having many attributes reduces the burden on the algorithm to guess
+    which single attribute we care about
+  \item and it gives us the ability to measure similarity between objects in a
+    more fine-grained way by comparing many attributes instead of just one
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
