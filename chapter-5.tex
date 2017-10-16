@@ -1065,14 +1065,40 @@ distributions $p(y | \bm{x};\parameter)$.
 \section{Stochastic Gradient Descent}
 \begin{itemize}
   \item an extension of the gradient descent algorithm
+  \item \textbf{a very important algorithm that powers nearly all of deep
+      learning}
   \item *a recurring problem in machine learning is that large training sets
     are necessary for good generalization, but large training sets are also
     more computationally expensive
   \item the cost function used by a machine learning algorithm often decomposes
     as a sum over training examples of some per-example loss function
-  \item
+  \item the insight of SGD is that the gradient is an \textbf{expectation}
+  \item this expectation may be approximately estimated using a small set of
+    samples
+  \item *a \textbf{minibatch} of examples $\mathbb{B} =
+    \{\bm{x}^{(1)},...,\bm{x}^{(m^{'})}\}$, with size $m^{'}$ sampled on each
+    step of the algorithm
+  \item the size is usually held fixed as the training set size $m$ grows
+  \item the purpose of the minibatch is to estimate the gradient
+  \item the estimate of the gradient is formed as:
+    \begin{equation}
+      \bm{g} = \frac{1}{m^{'}} \nabla_{\parameter} \sum_{i=1}^{m^{'}}
+      L(\bm{x}^{(i)}, \bm{y}^{(i)}, \parameter)
+    \end{equation}
+    using examples from the minibatch $\mathbb{B}$
+  \item the stochstic gradient descent algorithm then follows the estimated
+    gradient downhill:
+    \begin{equation}
+      \parameter \leftarrow \parameter - \epsilon \bm{g}
+    \end{equation}
+    where $\epsilon$ is the learning rate
+  \item gradient descent in general has often been regarded as slow or
+    unreliable, but today we know that the ML models discussed previously work
+    very well when trained with gradient descent
+  \item it may not be guaranteed to arrive at even a local minimum in a
+    reasonable amount of time, but it often finds a very low value of the cost
+    function quickly enough to be useful
 \end{itemize}
-
 
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
