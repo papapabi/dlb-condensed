@@ -1100,6 +1100,31 @@ distributions $p(y | \bm{x};\parameter)$.
     function quickly enough to be useful
 \end{itemize}
 
+\section{Building a Machine Learning Algorithm}
+\begin{itemize}
+  \item nearly all deep learning algorithms can be described as particular
+    instances of a fairly simple recipe: combine a specification of a dataset,
+    a cost function, an optimization procedure, and a model
+  \item by realizing that we can replace any of these components mostly
+    independently from the others, we can obtain a wide range of algorithms
+  \item the most common cost funtion is the negative log-likelihood (so that
+    minimizing the cost function causes maximum likelihood estimation)
+  \item if the model is nonlinear, then most cost functions can no longer be
+    optimized in closed form; needing an iterative numerical optimization
+    procedure like gradient descent
+  \item the recipe is applicable in both supervised and unsupervised learning
+  \item in some cases the cost function may be a function that we cannot
+    actually evaluate computationally - in these cases, we can still
+    approximately minimize it using iterative numerical optimization, so long
+    as we have some way of approximating its gradients
+  \item if an ML algorithm seems especially unique or hand-designed, it can
+    usually be understood as using a special-case optimizer, such as decision
+    trees and $k$-means
+  \item recognizing the most ML algorithms can be described using this recipe
+    helps to see the different algorithms as part of a taxonomy of methods for
+    doing related tasks that work for similar reasons
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
