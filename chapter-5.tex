@@ -1159,6 +1159,21 @@ distributions $p(y | \bm{x};\parameter)$.
     the predictive power of a model reduces as the dimensionality increases
 \end{itemize}
 
+\subsection{Local Constancy and Smoothness Regularization}
+\begin{itemize}
+  \item to generalize well, machine learning algorithms need to be guided by
+    prior beliefs about what kind of function they should learn
+  \item prior beliefs can be expressed implicitly by choosing algorithms that
+    are biased toward choosing some class of functions over another, even
+    though these biases may not be expressed (or even be possible to express)
+    in terms of a probability distribution representing our degree of belief in
+    various functions
+  \item among the most widely used of these implicit "priors" is the
+    \textbf{smoothness prior} or \textbf{local constancy prior}
+  \item the prior states that the function we learn should not change very much
+    within a "small" region
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
