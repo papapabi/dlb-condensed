@@ -1236,6 +1236,33 @@ distributions $p(y | \bm{x};\parameter)$.
   \item many machine learning algorithms seem hopeless if we expect the machine
     learning algorithm to learn functions with interesting variations across
     all of $\realnumbers^n$
+  \item manifold learning algorithms surmount this obstacle by assuming that
+    most of $\realnumbers^n$ consists of invalid inputs, and that interesting
+    inputs occur only along a collection of manifolds containing a small subset
+    of points, with interesting variations in the output of the learned
+    function occuring only along directions that lie on the manifold or when we
+    move from one manifold to another
+  \item (2) observations in favor of the \textbf{manifold hypothesis}
+  \item first, the probability distribution over images, text strings, and
+    sounds that occur in real life is highly concentrated; uniform noise
+    essentially never resembles structured inputs from these domains
+  \item the distribution of natural language sequences occupies a very little
+    volume in the total space of sequences of letters
+  \item second, we can imagine such neighborhoods and transformations, at least
+    informally (we can get a nice intuition)
+  \item we can think of many possible transformations that allow us to trace
+    out a manifold in image space: we can dim/brighten lights, move/rotate
+    objects, gradually alter the colors on the surfaces, and so forth
+  \item multiple manifolds are likely involved in most applications
+  \item when the data lies on a low-dimensional manifold, it can be most
+    natural for ML algorithms to represent that data in terms of coordinates on
+    the manifold, rather than in terms of coordinates in $\realnumbers^n$
+  \item for example, we can think of roads as 1-D manifolds embedded in 3-D
+    space
+  \item we can give directions to specific addresses in terms of address
+    numbers along these 1-D roads, not in terms of coordintes in 3-D space
+  \item extracting these manfold coordinates is a hassle, and a bit
+    challenging, but worth it for improving many ML algorithms
 \end{itemize}
 
 \section{End-of-Chapter Summary and Miscellany}
