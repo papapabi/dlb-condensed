@@ -1207,6 +1207,37 @@ distributions $p(y | \bm{x};\parameter)$.
     dimensionality
 \end{itemize}
 
+\subsection{Manifold Learning}
+\subsubsection{Manifold}
+\begin{itemize}
+  \item an important concept underlying many ideas in ML is that of a manifold
+  \item a \textbf{manifold} is a connected region
+  \item mathematically, it is a set of points associated with a neighborhood
+    around each point
+  \item a manifold is a topological space that \textit{locally} resembles
+    Euclidean space near each point (but globally manifolds may not, as they
+    often do)
+  \item one-dimensional manifolds include lines and circles (but not figure
+    eights because they have crossing points tha are not locally homeomorphic
+    to Euclidean 1-space)
+  \item *homeomorphisms are the mappings that preserve all the topological
+    properties of a given space
+  \item **roughly speaking, a topological space is a geometric object, and the
+    homeomorphism is a continuous stretching and bending of the object into
+    a new shape
+  \item manifolds, in the machine learning sense of the word, are used to
+    loosely designate a connected set of points that can be approximated well by
+    considering only a small number of degrees of freedom, or dimensions,
+    embedded in a higher-dimensional space
+\end{itemize}
+
+\subsubsection{Manifold Learning}
+\begin{itemize}
+  \item many machine learning algorithms seem hopeless if we expect the machine
+    learning algorithm to learn functions with interesting variations across
+    all of $\realnumbers^n$
+\end{itemize}
+
 \section{End-of-Chapter Summary and Miscellany}
 \begin{itemize}
   \item model - a mathematical formula with a number of parameters that need to
